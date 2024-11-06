@@ -1,7 +1,7 @@
 import { expect, userEvent, findByRole, within } from "@storybook/test";
 import { http, HttpResponse } from "msw";
-
 import { Default as TaskListDefault } from "../tasks/task-list.story";
+import { taskListHandler, taskListErrorHandler } from "../tasks/handlers";
 import { Inbox } from "./inbox";
 
 export default {
@@ -12,9 +12,7 @@ export default {
 export const Default = {
 	parameters: {
 		msw: {
-			handlers: [
-				http.get("/tasks", () => HttpResponse.json(TaskListDefault.args)),
-			],
+			handlers: [ taskListHandler ],
 		},
 	},
 };
@@ -25,9 +23,7 @@ export const Error = {
 	},
 	parameters: {
 		msw: {
-			handlers: [
-				http.get("/tasks", () => HttpResponse.json([])),
-			],
+			handlers: [ taskListErrorHandler ],
 		},
 	},
 };

@@ -1,16 +1,16 @@
 {
-  "name": "@theholocron/react-template",
+  "name": "@theholocron/nextjs-template",
   "description": "<description>",
-  "homepage": "https://github.com/theholocron/react-template#readme",
+  "homepage": "https://github.com/theholocron/nextjs-template#readme",
   "author": "Newton Koumantzelis",
-  "main": "dist/react-template.cjs.js",
-  "module": "dist/react-template.es.js",
+  "main": "dist/nextjs-template.cjs.js",
+  "module": "dist/nextjs-template.es.js",
   "style": "dist/style.css",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/react-template.es.js",
-      "require": "./dist/react-template.cjs.js"
+      "import": "./dist/nextjs-template.es.js",
+      "require": "./dist/nextjs-template.cjs.js"
     },
     "./style": "./dist/style.css"
   },
@@ -18,14 +18,14 @@
     "dist/*"
   ],
   "type": "module",
-  "version": "0.2.3",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/theholocron/react-template.git"
+    "url": "https://github.com/theholocron/nextjs-template.git"
   },
-  "bugs": "https://github.com/theholocron/react-template/issues",
-  "releases": "https://github.com/theholocron/react-template/releases",
-  "wiki": "https://github.com/theholocron/react-template/wiki",
+  "bugs": "https://github.com/theholocron/nextjs-template/issues",
+  "releases": "https://github.com/theholocron/nextjs-template/releases",
+  "wiki": "https://github.com/theholocron/nextjs-template/wiki",
   "license": "GPL-3.0",
   "packageManager": "npm@9.5.0",
   "bundlewatch": {
@@ -41,27 +41,33 @@
     ]
   },
   "msw": {
-    "workerDirectory": "public"
+    "workerDirectory": [
+      "public"
+    ]
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "next dev",
+    "dev:vite": "vite",
+    "build": "next build",
+    "build:vite": "vite build",
     "build:storybook": "storybook build",
     "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
     "preview": "vite preview",
-    "start": "storybook dev -p 6006",
+    "start": "next start",
+    "start:storybook": "storybook dev -p 6006",
     "test": "vitest",
     "test:cypress": "cypress open",
     "test:storybook": "test-storybook --coverage"
   },
   "engines": {
-    "node": ">=23",
+    "node": ">=20",
     "npm": ">=10"
   },
   "devDependencies": {
+    "@storybook/nextjs": "^8.2.5",
     "@theholocron/commitlint-config": "^3.4.4",
     "@theholocron/eslint-config": "^3.4.4",
     "@theholocron/jest-config": "^3.4.4",
@@ -70,15 +76,17 @@
     "@theholocron/storybook-config": "^3.4.4",
     "@theholocron/stylelint-config": "^3.4.4",
     "@theholocron/tsconfig": "^3.4.4",
-    "@tsconfig/vite-react": "^3.0.2",
+    "@tsconfig/next": "^2.0.3",
     "@vitejs/plugin-react": "^4.3.2",
     "alexjs": "^1.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "next": "^14",
+    "react": "^18",
+    "react-dom": "^18",
     "vite": "^5.4.9"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "next": "^14",
+    "react": "^18",
+    "react-dom": "^18"
   }
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { TaskList, useTasks } from "../tasks";
 
 export interface InboxProps {

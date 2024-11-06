@@ -1,6 +1,4 @@
-import * as path from "node:path";
-import { type StorybookConfig } from "@storybook/react-vite";
-import { mergeConfig } from "vite";
+import { type StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
 	addons: [
@@ -15,23 +13,16 @@ const config: StorybookConfig = {
 	docs: {
 		defaultName: "Documentation",
 	},
+	features: {
+		experimentalRSC: true,
+	},
 	framework: {
-		name: "@storybook/react-vite",
+		name: "@storybook/nextjs",
 		// https://storybook.js.org/docs/api/main-config/main-config-framework
 		options: {},
 	},
 	staticDirs: ["../public"],
 	stories: ["../src/**/*.mdx", "../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
-	// @TODO: abstract out to shared vite.config.ts
-	async viteFinal(config, options) {
-		return mergeConfig(config, {
-			resolve: {
-				alias: {
-					"@": path.resolve(__dirname, "../src"), // Adjust the path based on your project structure
-				},
-			},
-		});
-	},
 };
 
 export default config;

@@ -87,3 +87,10 @@ coverage
 reports
 dist
 super-linter-output
+.next
+next-env.d.ts
+out
+build
+.vercel
+.env*.local
+*storybook.log

@@ -1,17 +1,17 @@
-# React Template
+# NextJS Template
 
-A React template used within the Galaxy.
+A NextJS template used within the Galaxy.
 
 ## Installation
 
 ```bash
-npm install --save-dev @theholocron/react-template
+npm install --save-dev @theholocron/nextjs-template
 ```
 
 ## Usage
 
 ```typescript
-import { Component, type ComponentProps } from "@theholocron/react-template";
+import { Component, type ComponentProps } from "@theholocron/nextjs-template";
 
 function App (props: ComponentProps) {
 	return (
@@ -22,4 +22,4 @@ function App (props: ComponentProps) {
 
 ## Documentation
 
-Check out [The Holocron Archive](https://docs.theholocron.dev/projects/react-template/) for more information.
+Check out [The Holocron Archive](https://docs.theholocron.dev/nextjs-template/) for more information.

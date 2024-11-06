@@ -10,16 +10,16 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: path.resolve(__dirname, "src/index.ts"), // Entry point of your library
-			name: "react-template",
+			name: "nextjs-template",
 			formats: ["es", "cjs"], // Specify formats (ESM and CommonJS)
-			fileName: (format) => `react-template.${format}.js`,
+			fileName: (format) => `nextjs-template.${format}.js`,
 		},
 		rollupOptions: {
-			external: ["react", "react-dom"], // Externalize peer dependencies
+			external: ["react", "nextjs-dom"], // Externalize peer dependencies
 			output: {
 				globals: {
 					react: "React",
-					"react-dom": "ReactDOM",
+					"nextjs-dom": "ReactDOM",
 				},
 			},
 		},
