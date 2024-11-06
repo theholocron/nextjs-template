@@ -10,7 +10,7 @@ initialize({ onUnhandledRequest: "bypass" });
 const preview: Preview = {
 	layout: "centered",
 	loaders: [mswLoader],
-    nextjs: { appDirectory: true },
+	nextjs: { appDirectory: true },
 	parameters: {
 		controls: {
 			matchers: {
@@ -31,10 +31,10 @@ const preview: Preview = {
 	},
 	tags: ["autodocs"],
 	test: {
-      // This is needed until Next will update to the React 19 beta: https://github.com/vercel/next.js/pull/65058
-      // In the React 19 beta ErrorBoundary errors (such as redirect) are only logged, and not thrown.
-      dangerouslyIgnoreUnhandledErrors: true,
-    },
+		// This is needed until Next will update to the React 19 beta: https://github.com/vercel/next.js/pull/65058
+		// In the React 19 beta ErrorBoundary errors (such as redirect) are only logged, and not thrown.
+		dangerouslyIgnoreUnhandledErrors: true,
+	},
 };
 
 export default preview;

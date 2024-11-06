@@ -1,6 +1,4 @@
 import { expect, userEvent, findByRole, within } from "@storybook/test";
-import { http, HttpResponse } from "msw";
-import { Default as TaskListDefault } from "../tasks/task-list.story";
 import { taskListHandler, taskListErrorHandler } from "../tasks/handlers";
 import { Inbox } from "./inbox";
 
