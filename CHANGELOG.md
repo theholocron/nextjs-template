@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/theholocron/nextjs-template/compare/v1.0.0...v1.0.1) (2024-11-06)
+
+
+### Bug Fixes
+
+* build ([164d26a](https://github.com/theholocron/nextjs-template/commit/164d26aae75b1a3e13e49fb4632470843ba928a3))
+
 ## 1.0.0 (2024-11-06)
 
 
