@@ -1,6 +1,6 @@
 "use client";
 
-import { Index } from "../pages/";
+import { Index } from "../page/";
 
 export default function IndexPage () {
 	return <Index />;

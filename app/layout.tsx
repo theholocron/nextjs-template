@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import * as React from "react";
-import MSW from "../msw";
+import MSW from "./msw";
 
 import "./app.css";
 
+/*
 if (process.env.NEXT_RUNTIME === "nodejs") {
-	const { server } = require('../msw/node');
+	const { server } = require("./msw/node");
 	server.listen();
 }
+*/
 
 export const metadata: Metadata = {
 	title: "Next.js App Router + React Server Components Demo",

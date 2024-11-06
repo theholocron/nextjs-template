@@ -2,6 +2,14 @@ import { expect, userEvent, findByRole, within } from "@storybook/test";
 import { taskListHandler, taskListErrorHandler } from "../tasks/handlers";
 import { Inbox } from "./inbox";
 
+export type CanvasElement = {
+	canvasElement: HTMLElement;
+}
+
+export type CanvasInputElement = {
+	canvasElement: HTMLInputElement | HTMLTextAreaElement;
+}
+
 export default {
 	component: Inbox,
 	title: "Inbox",
@@ -30,9 +38,9 @@ export const PinTask = {
 	parameters: {
 		...Default.parameters,
 	},
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement }: CanvasElement) => {
 		const canvas = within(canvasElement);
-		const getTask = (id) => canvas.findByRole("listitem", { name: id });
+		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
 
 		const itemToPin = await getTask("task-4");
 		// Find the pin button
@@ -51,9 +59,9 @@ export const ArchiveTask = {
 	parameters: {
 		...Default.parameters,
 	},
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement }: CanvasElement) => {
 		const canvas = within(canvasElement);
-		const getTask = (id) => canvas.findByRole("listitem", { name: id });
+		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
 
 		const itemToArchive = await getTask("task-2");
 		const archiveButton = await findByRole(itemToArchive, "button", {
@@ -67,14 +75,16 @@ export const EditTask = {
 	parameters: {
 		...Default.parameters,
 	},
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement }: { canvasElement: HTMLTextAreaElement }) => {
 		const canvas = within(canvasElement);
-		const getTask = (id) => canvas.findByRole("listitem", { name: id });
+		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
 
 		const itemToEdit = await getTask("task-5");
 		const taskInput = await findByRole(itemToEdit, "textbox");
-		await userEvent.type(taskInput, " and disabled state");
-		await expect(taskInput.value).toBe("Fix bug in input error state and disabled state");
+		if (taskInput instanceof HTMLInputElement || taskInput instanceof HTMLTextAreaElement) {
+			await userEvent.type(taskInput, " and disabled state");
+			await expect(taskInput.value).toBe("Fix bug in input error state and disabled state");
+		}
 	},
 };
 
@@ -82,9 +92,9 @@ export const DeleteTask = {
 	parameters: {
 		...Default.parameters,
 	},
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement }: CanvasElement) => {
 		const canvas = within(canvasElement);
-		const getTask = (id) => canvas.findByRole("listitem", { name: id });
+		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
 
 		const itemToDelete = await getTask("task-1");
 		const deleteButton = await findByRole(itemToDelete, "button", {

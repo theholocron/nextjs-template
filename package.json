@@ -2,7 +2,9 @@
   "name": "@theholocron/nextjs-template",
   "description": "<description>",
   "homepage": "https://github.com/theholocron/nextjs-template#readme",
-  "author": "Newton Koumantzelis",
+  "author": {
+    "name": "Newton Koumantzelis"
+  },
   "main": "dist/nextjs-template.cjs.js",
   "module": "dist/nextjs-template.es.js",
   "style": "dist/style.css",
@@ -21,9 +23,11 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/theholocron/nextjs-template.git"
+    "url": "git+https://github.com/theholocron/nextjs-template.git"
   },
-  "bugs": "https://github.com/theholocron/nextjs-template/issues",
+  "bugs": {
+    "url": "https://github.com/theholocron/nextjs-template/issues"
+  },
   "releases": "https://github.com/theholocron/nextjs-template/releases",
   "wiki": "https://github.com/theholocron/nextjs-template/wiki",
   "license": "GPL-3.0",
@@ -90,4 +94,3 @@
     "react-dom": "^18"
   }
 }
-

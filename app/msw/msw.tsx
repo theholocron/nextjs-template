@@ -8,13 +8,13 @@ const mockingEnabledPromise =
 			await worker.start({
 				onUnhandledRequest(request, print) {
 					if (request.url.includes("_next")) {
-						return
+						return;
 					}
-					print.warning()
+					print.warning();
 				},
 			})
 		})
-		: Promise.resolve()
+		: Promise.resolve();
 
 
 export type WithChildren = Readonly<{
