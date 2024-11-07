@@ -1,14 +1,20 @@
 {
   "name": "@theholocron/nextjs-template",
+  "version": "1.0.1",
   "description": "<description>",
   "homepage": "https://github.com/theholocron/nextjs-template#readme",
+  "bugs": {
+    "url": "https://github.com/theholocron/nextjs-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theholocron/nextjs-template.git"
+  },
+  "license": "GPL-3.0",
   "author": {
     "name": "Newton Koumantzelis"
   },
-  "main": "dist/nextjs-template.cjs.js",
-  "module": "dist/nextjs-template.es.js",
-  "style": "dist/style.css",
-  "types": "dist/index.d.ts",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/nextjs-template.es.js",
@@ -16,59 +22,27 @@
     },
     "./style": "./dist/style.css"
   },
+  "main": "dist/nextjs-template.cjs.js",
+  "module": "dist/nextjs-template.es.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/style.css",
   "files": [
     "dist/*"
   ],
-  "type": "module",
-  "version": "1.0.1",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/theholocron/nextjs-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/theholocron/nextjs-template/issues"
-  },
-  "releases": "https://github.com/theholocron/nextjs-template/releases",
-  "wiki": "https://github.com/theholocron/nextjs-template/wiki",
-  "license": "GPL-3.0",
-  "packageManager": "npm@9.5.0",
-  "bundlewatch": {
-    "files": [
-      {
-        "path": "./dist/**/*.css",
-        "maxSize": "50 kB"
-      },
-      {
-        "path": "./dist/**/*.js",
-        "maxSize": "100 kB"
-      }
-    ]
-  },
-  "msw": {
-    "workerDirectory": [
-      "public"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
+    "build": "next build",
+    "build:storybook": "storybook build",
+    "build:vite": "vite build",
     "dev": "next dev",
     "dev:vite": "vite",
-    "build": "next build",
-    "build:vite": "vite build",
-    "build:storybook": "storybook build",
     "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
+    "prepare": "husky",
     "preview": "vite preview",
     "start": "next start",
     "start:storybook": "storybook dev -p 6006",
     "test": "vitest",
     "test:cypress": "cypress open",
     "test:storybook": "test-storybook --coverage"
-  },
-  "engines": {
-    "node": ">=20",
-    "npm": ">=10"
   },
   "devDependencies": {
     "@codesandbox/storybook-addon": "^0.2.0",
@@ -96,5 +70,32 @@
     "next": "^14",
     "react": "^18",
     "react-dom": "^18"
-  }
+  },
+  "packageManager": "npm@9.5.0",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "./.next/static/css/*.css",
+        "maxSize": "50 kB"
+      },
+      {
+        "path": "./.next/static/chunks/*.js",
+        "maxSize": "100 kB"
+      }
+    ]
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "releases": "https://github.com/theholocron/nextjs-template/releases",
+  "wiki": "https://github.com/theholocron/nextjs-template/wiki"
 }

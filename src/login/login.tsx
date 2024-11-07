@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import type { Credentials } from "../auth";
 import "./login.css";
 
@@ -8,11 +7,8 @@ export interface LoginFormProps {
 	onSubmit: (formData: Credentials) => void;
 }
 
-export function LoginForm (props: LoginFormProps) {
-	const {
-		onSubmit,
-		...rest
-	} = props;
+export function LoginForm(props: LoginFormProps) {
+	const { onSubmit, ...rest } = props;
 
 	return (
 		<form
@@ -76,7 +72,7 @@ export interface LoginProps {
 	onLogIn: (credentials: Credentials) => void;
 }
 
-export function Login (props: LoginProps) {
+export function Login(props: LoginProps) {
 	return (
 		<div className="page lists-show">
 			<div className="loginscreen">
