@@ -12,7 +12,7 @@ const preview: Preview = {
 	loaders: [mswLoader],
 	parameters: {
 		codesandbox: {
-			apiToken: process.env.CODE_SANDBOX_API_TOKEN,
+			apiToken: process.env.STORYBOOK_CODE_SANDBOX_API_TOKEN,
 			template: "react",
 			privacy: "public",
 		},
