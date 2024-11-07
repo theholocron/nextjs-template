@@ -57,7 +57,7 @@ jobs:
       - run: npm run build
         name: Build project
 
-      - run: lhci autorun --config=${{ github.workspace }}/lighthouse.config.js
+      - run: lhci autorun --config=${{ github.workspace }}/lighthouse.config.mjs
         name: Run Lighthouse CI
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

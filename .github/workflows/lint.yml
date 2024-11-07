@@ -40,6 +40,7 @@ jobs:
           LINTER_RULES_PATH: /
           CSS_FILE_NAME: "stylelint.config.js"
           EDITORCONFIG_FILE_NAME: ".editorconfig-checker.json"
+          FILTER_REGEX_EXCLUDE: "^public/.*"
           FIX_CSS_PRETTIER: true
           FIX_ENV: true
           FIX_GRAPHQL_PRETTIER: true
