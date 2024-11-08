@@ -1,7 +1,7 @@
 {
   "ci": {
-  	"upload": {
-  		"target": "temporary-public-storage",
-  	}
+    "upload": {
+      "target": "temporary-public-storage"
+    }
   }
 }
