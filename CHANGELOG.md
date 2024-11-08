@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/theholocron/nextjs-template/compare/v1.1.0...v1.2.0) (2024-11-08)
+
+
+### Features
+
+* add in release bot ([#12](https://github.com/theholocron/nextjs-template/issues/12)) ([ed86830](https://github.com/theholocron/nextjs-template/commit/ed868308897147bb73a0cdd08a95bd3af4309440))
+
 ## [1.1.0](https://github.com/theholocron/nextjs-template/compare/v1.0.1...v1.1.0) (2024-11-08)
 
 
