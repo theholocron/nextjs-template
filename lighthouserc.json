@@ -1,10 +1,8 @@
 {
   "ci": {
     "collect": {
-      "url": [
-        "http://localhost:3000/"
-      ],
-      "startServerCommand": "npm start"
+      "url": ["http://localhost:3000/"],
+      "startServerCommand": "npx serve@latest out"
     },
     "assert": {
       "preset": "lighthouse:recommended"
