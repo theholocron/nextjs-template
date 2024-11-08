@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/theholocron/nextjs-template/compare/v1.0.1...v1.1.0) (2024-11-08)
+
+
+### Features
+
+* add in dependabot & lighthouse workflows ([#10](https://github.com/theholocron/nextjs-template/issues/10)) ([23f1f6c](https://github.com/theholocron/nextjs-template/commit/23f1f6c6028199baf0d716d97b4c7a3788decf0b))
+
 ## [1.0.1](https://github.com/theholocron/nextjs-template/compare/v1.0.0...v1.0.1) (2024-11-06)
 
 
