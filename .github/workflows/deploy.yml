@@ -1,97 +1,28 @@
 name: Deploy
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches:
       - main
 
-  workflow_dispatch:
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  deploy:
-    name: Deploy Storybook and Next.js site to GitHub Pages
+  github-pages:
+    name: Publish Storybook to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repository
-      - uses: actions/checkout@v4
-        name: Checkout repository
-
-      # Setup Node.js
-      - uses: actions/setup-node@v4
-        name: Setup Node.js @v20
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        id: deploy-github-pages
+        name: Publish Storybook to GitHub Pages
         with:
-          cache: npm
-          node-version: 20.x
-
-      # ---------------------
-      # 1. Deploy Storybook
-      # ---------------------
-      - name: Install dependencies for Storybook
-        run: npm ci
-
-      - name: Build Storybook
-        run: npm run build:storybook
-
-      - uses: actions/upload-pages-artifact@v3
-        name: Upload Storybook artifact
-        with:
-          path: docs
-          name: storybook-artifact-${{ github.run_id }}
-
-      # ---------------------
-      # 2. Deploy Next.js App
-      # ---------------------
-      # Configure GitHub Pages for Next.js
-      - uses: actions/configure-pages@v5
-        name: Configure GitHub Pages
-
-      # Restore Next.js cache
-      - name: Restore Next.js cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-
-      - name: Build Next.js app
-        run: npm run build
-
-      - uses: actions/upload-pages-artifact@v3
-        name: Upload Next.js artifact
-        with:
-          path: ./out
-          name: nextjs-artifact-${{ github.run_id }}
-
-      # ---------------------
-      # 3. Deploy to GitHub Pages
-      # ---------------------
-      - uses: actions/deploy-pages@v4
-        id: deployment
-        name: Deploy to GitHub Pages
-        with:
-          # Deploy the Next.js artifact to the root
-          artifact-name: nextjs-artifact-${{ github.run_id }}
-          target-folder: /
-
-      - uses: actions/deploy-pages@v4
-        id: deployment-storybook
-        name: Deploy Storybook to /docs
-        with:
-          # Deploy the Storybook artifact to /docs
-          artifact-name: storybook-artifact-${{ github.run_id }}
-          target-folder: /docs
-
+          build_command: npm run build:storybook
+          install_command: npm ci
+          path: storybook-static
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy-github-pages.outputs.page_url }}
