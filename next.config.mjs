@@ -5,7 +5,7 @@
 import bundleAnalyzer from "@next/bundle-analyzer";
 
 const config = {
-	// your existing config settings go here
+	output: "export",
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
