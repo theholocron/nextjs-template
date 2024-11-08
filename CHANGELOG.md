@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/theholocron/nextjs-template/compare/v1.2.0...v1.3.0) (2024-11-08)
+
+
+### Features
+
+* next deploy gh pages ([#15](https://github.com/theholocron/nextjs-template/issues/15)) ([0d6dd18](https://github.com/theholocron/nextjs-template/commit/0d6dd18e5a4e45fdb28288f107d5c4dd3232a49d))
+
 ## [1.2.0](https://github.com/theholocron/nextjs-template/compare/v1.1.0...v1.2.0) (2024-11-08)
 
 
