@@ -8,9 +8,7 @@ const authenticate = http.post("/authenticate", async () => {
 		},
 	};
 
-	return HttpResponse.json(user, { status: 201 })
+	return HttpResponse.json(user, { status: 201 });
 });
 
-export const handlers = [
-	authenticate,
-];
+export const handlers = [authenticate];

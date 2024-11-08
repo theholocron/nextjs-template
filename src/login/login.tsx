@@ -1,18 +1,14 @@
 "use client";
 
-import * as React from "react";
 import type { Credentials } from "../auth";
 import "./login.css";
 
-export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
+export interface LoginFormProps {
 	onSubmit: (formData: Credentials) => void;
 }
 
-export function LoginForm (props: LoginFormProps) {
-	const {
-		onSubmit,
-		...rest
-	} = props;
+export function LoginForm(props: LoginFormProps) {
+	const { onSubmit, ...rest } = props;
 
 	return (
 		<form
@@ -20,12 +16,12 @@ export function LoginForm (props: LoginFormProps) {
 			onSubmit={(event) => {
 				event.preventDefault();
 				const elementsArray = Array.from(event.currentTarget.elements) as HTMLInputElement[];
-				const formData = elementsArray.reduce((acc: { [key: string]: string }, elem: object) => {
+				const formData = elementsArray.reduce((acc: Partial<Credentials>, elem: HTMLInputElement) => {
 					if (elem.name) {
-						acc[elem.name] = elem.value;
+						acc[elem.name as keyof Credentials] = elem.value;
 					}
 					return acc;
-				}, {});
+				}, {} as Partial<Credentials>);
 
 				// Ensure `formData` includes both `username` and `password` before calling `onSubmit`
 				if (formData.username && formData.password) {
@@ -76,7 +72,7 @@ export interface LoginProps {
 	onLogIn: (credentials: Credentials) => void;
 }
 
-export function Login (props: LoginProps) {
+export function Login(props: LoginProps) {
 	return (
 		<div className="page lists-show">
 			<div className="loginscreen">
