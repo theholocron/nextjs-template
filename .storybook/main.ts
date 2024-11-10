@@ -10,6 +10,7 @@ const config: StorybookConfig = {
 		"@codesandbox/storybook-addon",
 		"@chromatic-com/storybook",
 		"@whitespace/storybook-addon-html",
+		"@codesandbox/storybook-addon",
 	],
 	docs: {
 		defaultName: "Documentation",
