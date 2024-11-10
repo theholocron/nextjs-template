@@ -34,6 +34,11 @@ jobs:
           "npx wait-on tcp:6006 && npm run test:storybook -- --coverage"
         name: Run tests with coverage
 
+      - uses: codecov/codecov-action@v4
+        name: Upload results to Codecov
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
   # Run visual and composition tests with Chromatic
   visual-and-composition:
     name: Test Visual and Composition
