@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/theholocron/nextjs-template/compare/v1.3.0...v1.4.0) (2024-11-10)
+
+
+### Features
+
+* update to get parity ([#19](https://github.com/theholocron/nextjs-template/issues/19)) ([ae691b7](https://github.com/theholocron/nextjs-template/commit/ae691b7f9d48ba1b0ba7767de25371944f70d5e7))
+
 ## [1.3.0](https://github.com/theholocron/nextjs-template/compare/v1.2.0...v1.3.0) (2024-11-08)
 
 
