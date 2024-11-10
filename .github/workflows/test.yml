@@ -25,7 +25,7 @@ jobs:
       - run: npx playwright install --with-deps
         name: Install Playwright
 
-      - run: npm run build:storybook --quiet
+      - run: npm run build:storybook -- --quiet --output-dir=docs
         name: Build Storybook
 
       - run: |
@@ -82,7 +82,7 @@ jobs:
       - run: npx playwright install --with-deps
         name: Install Playwright
 
-      - run: npm run build:storybook --quiet
+      - run: npm run build:storybook -- --quiet --output-dir=docs
         name: Build Storybook
 
       - run: |
