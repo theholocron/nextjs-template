@@ -64,18 +64,18 @@
     "@theholocron/tsconfig": "^3.5.1",
     "@tsconfig/next": "^2.0.3",
     "@types/node": "^22.9.0",
-    "@types/react": "^18.3.12",
+    "@types/react": "^19.0.7",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.2",
     "@whitespace/storybook-addon-html": "^6.1.1",
     "alexjs": "^1.0.0",
-    "react": "^18",
+    "react": "^19",
     "react-dom": "^18",
     "vite": "^5.4.9"
   },
   "peerDependencies": {
     "next": "^14",
-    "react": "^18",
+    "react": "^19",
     "react-dom": "^18"
   },
   "packageManager": "npm@9.5.0",
