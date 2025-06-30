@@ -53,7 +53,7 @@
     "@storybook/addon-essentials": "^8.4.2",
     "@storybook/addon-interactions": "^8.4.2",
     "@storybook/addon-links": "^8.4.2",
-    "@storybook/nextjs": "^8.2.5",
+    "@storybook/nextjs": "^9.0.14",
     "@theholocron/commitlint-config": "^3.5.1",
     "@theholocron/eslint-config": "^3.5.1",
     "@theholocron/jest-config": "^3.5.1",
