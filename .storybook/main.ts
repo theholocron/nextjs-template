@@ -4,13 +4,8 @@ const config: StorybookConfig = {
 	addons: [
 		"@storybook/addon-a11y",
 		"@storybook/addon-coverage",
-		"@storybook/addon-essentials",
-		"@storybook/addon-interactions",
 		"@storybook/addon-links",
-		"@codesandbox/storybook-addon",
 		"@chromatic-com/storybook",
-		"@whitespace/storybook-addon-html",
-		"@codesandbox/storybook-addon",
 	],
 	docs: {
 		defaultName: "Documentation",

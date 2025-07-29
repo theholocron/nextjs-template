@@ -1,9 +1,9 @@
-import theHolocron, { theHolocronCypress, theHolocronStorybook } from "@theholocron/eslint-config";
+import { cypress, holocron, storybook } from "@theholocron/eslint-config";
 
 /**
  * @see https://eslint.org/docs/latest/use/configure/
  * @type {import("eslint").Linter.Config}
  */
-const config = [...theHolocron, ...theHolocronStorybook, ...theHolocronCypress];
+const config = [...holocron, ...storybook, ...cypress];
 
 export default config;

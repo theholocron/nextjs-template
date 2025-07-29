@@ -1,14 +1,6 @@
-import { expect, userEvent, findByRole, within } from "@storybook/test";
+import { expect, findByRole, within } from "storybook/test";
 import { taskListHandler, taskListErrorHandler } from "../tasks/handlers";
 import { Inbox } from "./inbox";
-
-export type CanvasElement = {
-	canvasElement: HTMLElement;
-}
-
-export type CanvasInputElement = {
-	canvasElement: HTMLInputElement | HTMLTextAreaElement;
-}
 
 export default {
 	component: Inbox,
@@ -18,7 +10,7 @@ export default {
 export const Default = {
 	parameters: {
 		msw: {
-			handlers: [ taskListHandler ],
+			handlers: [taskListHandler],
 		},
 	},
 };
@@ -29,7 +21,7 @@ export const Error = {
 	},
 	parameters: {
 		msw: {
-			handlers: [ taskListErrorHandler ],
+			handlers: [taskListErrorHandler],
 		},
 	},
 };
@@ -38,8 +30,7 @@ export const PinTask = {
 	parameters: {
 		...Default.parameters,
 	},
-	play: async ({ canvasElement }: CanvasElement) => {
-		const canvas = within(canvasElement);
+	play: async ({ canvas, userEvent }) => {
 		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
 
 		const itemToPin = await getTask("task-4");
@@ -59,8 +50,7 @@ export const ArchiveTask = {
 	parameters: {
 		...Default.parameters,
 	},
-	play: async ({ canvasElement }: CanvasElement) => {
-		const canvas = within(canvasElement);
+	play: async ({ canvas, userEvent }) => {
 		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
 
 		const itemToArchive = await getTask("task-2");
@@ -75,8 +65,7 @@ export const EditTask = {
 	parameters: {
 		...Default.parameters,
 	},
-	play: async ({ canvasElement }: { canvasElement: HTMLTextAreaElement }) => {
-		const canvas = within(canvasElement);
+	play: async ({ canvas, userEvent }) => {
 		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
 
 		const itemToEdit = await getTask("task-5");
@@ -92,8 +81,7 @@ export const DeleteTask = {
 	parameters: {
 		...Default.parameters,
 	},
-	play: async ({ canvasElement }: CanvasElement) => {
-		const canvas = within(canvasElement);
+	play: async ({ canvas, userEvent }) => {
 		const getTask = (id: string) => canvas.findByRole("listitem", { name: id });
 
 		const itemToDelete = await getTask("task-1");
