@@ -5,12 +5,12 @@ import * as React from "react";
 export interface AuthOptions {
 	headers?: { [key: string]: string };
 	body?: string;
-	token?: string;
 }
 
 export interface User {
 	id: string;
 	name: string;
+	token?: string;
 	// [key: string]: any; // Allow any additional user properties
 }
 
