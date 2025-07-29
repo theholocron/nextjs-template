@@ -1,6 +1,7 @@
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Task, type TaskProps } from "./task";
 
-export default {
+const meta = {
 	component: Task,
 	title: "Task",
 	argTypes: {
@@ -9,7 +10,10 @@ export default {
 		onEditTitle: { action: "onEditTitle" },
 		onDeleteTask: { action: "onDeleteTask" },
 	},
-};
+} satisfies Meta<typeof Task>;
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Default = {
 	render: (args: TaskProps) => (
@@ -24,7 +28,7 @@ export const Default = {
 			state: "TASK_INBOX",
 		},
 	},
-};
+} satisfies Story;
 
 export const Pinned = {
 	render: (args: TaskProps) => (
@@ -39,7 +43,7 @@ export const Pinned = {
 			state: "TASK_PINNED",
 		},
 	},
-};
+} satisfies Story;
 
 export const Archived = {
 	render: (args: TaskProps) => (
@@ -54,7 +58,7 @@ export const Archived = {
 			state: "TASK_ARCHIVED",
 		},
 	},
-};
+} satisfies Story;
 
 const longTitleString = `This task's name is absurdly large. In fact, I think if I keep going I might end up with content overflow. What will happen? The star that represents a pinned task could have text overlapping. The text could cut-off abruptly when it reaches the star. I hope not!`;
 
@@ -71,4 +75,4 @@ export const LongTitle = {
 			state: "TASK_INBOX",
 		},
 	},
-};
+} satisfies Story;

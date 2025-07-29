@@ -1,13 +1,17 @@
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import TaskStories from "./task.story";
 import { TaskList } from "./task-list";
 
-export default {
+const meta = {
 	component: TaskList,
 	title: "TaskList",
 	argTypes: {
 		...TaskStories.argTypes,
 	},
-};
+} satisfies Meta<typeof TaskList>;
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Default = {
 	args: {
@@ -28,7 +32,7 @@ export const Default = {
 			},
 		],
 	},
-};
+} satisfies Story;
 
 export const WithPinnedTasks = {
 	args: {
@@ -41,18 +45,18 @@ export const WithPinnedTasks = {
 			...Default.args.tasks.slice(0, 5),
 		],
 	},
-};
+} satisfies Story;
 
 export const Loading = {
 	args: {
 		tasks: [],
 		loading: true,
 	},
-};
+} satisfies Story;
 
 export const Empty = {
 	args: {
 		...Loading.args,
 		loading: false,
 	},
-};
+} satisfies Story;
