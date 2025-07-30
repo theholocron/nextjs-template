@@ -1,10 +1,14 @@
-import { type StorybookConfig } from "@storybook/nextjs";
+import { type StorybookConfig } from "@storybook/nextjs-vite";
 
 const config: StorybookConfig = {
 	addons: [
 		"@storybook/addon-a11y",
 		"@storybook/addon-coverage",
+		"@storybook/addon-designs",
+		"@storybook/addon-docs",
 		"@storybook/addon-links",
+		"@storybook/addon-themes",
+		"@storybook/addon-vitest",
 		"@chromatic-com/storybook",
 	],
 	docs: {
@@ -13,11 +17,7 @@ const config: StorybookConfig = {
 	features: {
 		experimentalRSC: true,
 	},
-	framework: {
-		name: "@storybook/nextjs",
-		// https://storybook.js.org/docs/api/main-config/main-config-framework
-		options: {},
-	},
+	framework: "@storybook/nextjs-vite",
 	staticDirs: ["../public"],
 	stories: ["../src/**/*.mdx", "../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
 };

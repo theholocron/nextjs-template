@@ -1,16 +1,22 @@
 import "@testing-library/jest-dom";
-import { beforeAll } from "vitest";
-import { server } from "./app/msw/node";
-
 import { setProjectAnnotations } from "@storybook/nextjs";
+import { afterAll, afterEach, beforeAll } from "vitest";
+import { worker } from "./app/msw/browser";
 import * as previewAnnotations from "./.storybook/preview";
 
 const annotations = setProjectAnnotations([previewAnnotations]);
 
 beforeAll(async () => {
 	await annotations?.beforeAll?.();
-	// Then start MSW server
-	server.listen();
+	await worker.start({
+		onUnhandledRequest: "warn",
+	});
 });
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
+
+afterEach(() => {
+	worker.resetHandlers();
+});
+
+afterAll(() => {
+	worker.stop();
+});
