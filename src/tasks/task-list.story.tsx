@@ -31,11 +31,16 @@ export const Default = {
 				title: "Draft monthly blog to customers",
 			},
 		],
+		onTogglePinTask: () => {},
+		onArchiveTask: () => {},
+		onEditTitle: () => {},
+		onDeleteTask: () => {},
 	},
 } satisfies Story;
 
 export const WithPinnedTasks = {
 	args: {
+		...Default.args,
 		tasks: [
 			{
 				id: "6",
@@ -49,6 +54,7 @@ export const WithPinnedTasks = {
 
 export const Loading = {
 	args: {
+		...Default.args,
 		tasks: [],
 		loading: true,
 	},
