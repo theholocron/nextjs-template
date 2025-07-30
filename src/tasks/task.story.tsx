@@ -27,6 +27,10 @@ export const Default = {
 			title: "Buy milk",
 			state: "TASK_INBOX",
 		},
+		onArchiveTask: () => {},
+		onTogglePinTask: () => {},
+		onEditTitle: () => {},
+		onDeleteTask: () => {},
 	},
 } satisfies Story;
 
@@ -37,6 +41,7 @@ export const Pinned = {
 		</ul>
 	),
 	args: {
+		...Default.args,
 		task: {
 			id: "2",
 			title: "QA dropdown",
@@ -52,6 +57,7 @@ export const Archived = {
 		</ul>
 	),
 	args: {
+		...Default.args,
 		task: {
 			id: "3",
 			title: "Write schema for account menu",
@@ -69,6 +75,7 @@ export const LongTitle = {
 		</ul>
 	),
 	args: {
+		...Default.args,
 		task: {
 			id: "4",
 			title: longTitleString,
