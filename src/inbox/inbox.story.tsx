@@ -1,11 +1,15 @@
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { expect, findByRole, within } from "storybook/test";
 import { taskListHandler, taskListErrorHandler } from "../tasks/handlers";
 import { Inbox } from "./inbox";
 
-export default {
+const meta = {
 	component: Inbox,
 	title: "Inbox",
-};
+} satisfies Meta<typeof Inbox>;
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Default = {
 	parameters: {
@@ -13,7 +17,7 @@ export const Default = {
 			handlers: [taskListHandler],
 		},
 	},
-};
+} satisfies Story;
 
 export const Error = {
 	args: {
@@ -24,7 +28,7 @@ export const Error = {
 			handlers: [taskListErrorHandler],
 		},
 	},
-};
+} satisfies Story;
 
 export const PinTask = {
 	parameters: {
@@ -44,7 +48,7 @@ export const PinTask = {
 		});
 		await expect(unpinButton).toBeInTheDocument();
 	},
-};
+} satisfies Story;
 
 export const ArchiveTask = {
 	parameters: {
@@ -59,7 +63,7 @@ export const ArchiveTask = {
 		});
 		await userEvent.click(archiveButton);
 	},
-};
+} satisfies Story;
 
 export const EditTask = {
 	parameters: {
@@ -75,7 +79,7 @@ export const EditTask = {
 			await expect(taskInput.value).toBe("Fix bug in input error state and disabled state");
 		}
 	},
-};
+} satisfies Story;
 
 export const DeleteTask = {
 	parameters: {
@@ -93,4 +97,4 @@ export const DeleteTask = {
 		await userEvent.click(deleteButton);
 		await expect(canvas.getAllByRole("listitem").length).toBe(5);
 	},
-};
+} satisfies Story;
