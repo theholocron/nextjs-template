@@ -7,11 +7,11 @@ export default defineConfig({
 	component: {
 		devServer: {
 			framework: "next",
-			bundler: "webpack",
+			bundler: "vite",
 		},
 	},
 	e2e: {
-		setupNodeEvents(on, config) {},
+		// setupNodeEvents(on, config) {},
 		baseUrl: "http://localhost:3000/", // this is the default port for `next` that runs a server
 		specPattern: "src/**/*.{cy.js,cy.ts}",
 		supportFile: false,
