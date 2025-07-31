@@ -26,7 +26,7 @@ jobs:
       - run: npx playwright install chromium --with-deps
         name: Install Playwright
 
-      - run: npm test:storybook -- --coverage
+      - run: npm run test:storybook -- --coverage
         name: Run tests with coverage
 
       - uses: codecov/codecov-action@v4
@@ -84,7 +84,7 @@ jobs:
       - run: npx playwright install chromium --with-deps
         name: Install Playwright
 
-      - run: npm test:storybook
+      - run: npm run test:storybook
         name: Run tests
 
   # Run user flow tests with Cypress
