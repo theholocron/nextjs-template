@@ -32,7 +32,7 @@ export default defineConfig({
 	},
 	e2e: {
 		// setupNodeEvents(on, config) {},
-		// baseUrl: "http://localhost:3000/", // this is the default port for `next` that runs a server
+		baseUrl: "http://localhost:3000/", // this is the default port for `next` that runs a server
 		specPattern: "src/**/*.{cy.js,cy.ts}",
 		supportFile: false,
 		// retries: 2,
