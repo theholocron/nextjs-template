@@ -35,7 +35,7 @@ export default defineConfig({
 		baseUrl: "http://localhost:3000/", // this is the default port for `next` that runs a server
 		specPattern: "src/**/*.{cy.js,cy.ts}",
 		supportFile: false,
-		// retries: 2,
+		retries: 2,
 	},
 	projectId: "etpgyt",
 });
