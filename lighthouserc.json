@@ -5,7 +5,7 @@
       "startServerCommand": "npx serve@latest out"
     },
     "assert": {
-      "assertMatrix": {
+      "assertions": {
         "bf-cache": ["warn", { "minScore": 0.9 }],
         "errors-in-console": ["warn", { "minScore": 0.9 }],
         "font-display": ["warn", { "minScore": 0.9 }],
