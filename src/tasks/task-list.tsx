@@ -1,25 +1,19 @@
 "use client";
 
 import { Task, type TaskProps } from "./task";
+import { type ITask } from "./use-tasks";
 
 export interface TaskListProps {
 	loading?: boolean;
-	tasks: TaskProps["task"][];
+	tasks: ITask[];
 	onTogglePinTask: TaskProps["onTogglePinTask"];
 	onArchiveTask: TaskProps["onArchiveTask"];
 	onEditTitle: TaskProps["onEditTitle"];
 	onDeleteTask: TaskProps["onDeleteTask"];
 }
 
-export function TaskList (props: TaskListProps) {
-	const {
-		loading = false,
-		tasks,
-		onTogglePinTask,
-		onArchiveTask,
-		onEditTitle,
-		onDeleteTask,
-	} = props;
+export function TaskList(props: TaskListProps) {
+	const { loading = false, tasks, onTogglePinTask, onArchiveTask, onEditTitle, onDeleteTask } = props;
 
 	const events = {
 		onTogglePinTask,
@@ -68,13 +62,7 @@ export function TaskList (props: TaskListProps) {
 	];
 
 	return (
-		<div
-			className="list-items"
-			data-testid="success"
-			key={"success"}
-			role="list"
-			aria-label="tasks"
-		>
+		<div className="list-items" data-testid="success" key={"success"} role="list" aria-label="tasks">
 			{tasksInOrder.map((task) => (
 				<Task key={task.id} task={task} {...events} />
 			))}

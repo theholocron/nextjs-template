@@ -1,16 +1,14 @@
+import { type ITask } from "./use-tasks";
+
 export interface TaskProps {
-	task: {
-		id: string;
-		title: string;
-		state: "TASK_INBOX" | "TASK_PINNED" | "TASK_ARCHIVED";
-	};
+	task: ITask;
 	onArchiveTask: (archive: "ARCHIVE_TASK", id: string) => void;
 	onTogglePinTask: (state: "TASK_INBOX" | "TASK_PINNED" | "TASK_ARCHIVED", id: string) => void;
 	onEditTitle: (title: string, id: string) => void;
 	onDeleteTask: (id: string) => void;
 }
 
-export function Task (props: TaskProps) {
+export function Task(props: TaskProps) {
 	const {
 		task: { id, title, state },
 		onArchiveTask,
@@ -47,11 +45,7 @@ export function Task (props: TaskProps) {
 					onChange={(e) => onEditTitle(e.target.value, id)}
 				/>
 			</label>
-			<button
-				aria-label="delete"
-				className="delete-button"
-				onClick={() => onDeleteTask(id)}
-			>
+			<button aria-label="delete" className="delete-button" onClick={() => onDeleteTask(id)}>
 				<span className="icon-trash" />
 			</button>
 			{state !== "TASK_ARCHIVED" && (

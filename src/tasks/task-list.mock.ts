@@ -1,4 +1,6 @@
-export const mockTasks = [
+import { type ITask } from "./use-tasks";
+
+export const mockTasks: ITask[] = [
 	{ id: "1", state: "TASK_INBOX", title: "Build a date picker" },
 	{ id: "2", state: "TASK_INBOX", title: "QA dropdown" },
 	{
