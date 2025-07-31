@@ -1,5 +1,6 @@
 import * as path from "node:path";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import { storybookNextJsPlugin } from "@storybook/nextjs-vite/vite-plugin";
 import react from "@vitejs/plugin-react";
 import { coverageConfigDefaults, defineConfig } from "vitest/config";
 
@@ -25,7 +26,7 @@ export default defineConfig({
 		},
 	},
 	publicDir: "public",
-	plugins: [react(), storybookTest()],
+	plugins: [react(), storybookNextJsPlugin(), storybookTest()],
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "./src"), // Example alias, adjust as needed
