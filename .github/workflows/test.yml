@@ -93,8 +93,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # https://github.com/cypress-io/github-action/issues/48
-      matrix:
-        containers: [1, 2] # Uses 2 parallel instances
     steps:
       - uses: actions/checkout@v4
         name: Checkout repository
@@ -124,6 +122,10 @@ jobs:
           record: true
           parallel: true # Runs test in parallel using settings above
         env:
+          # overwrite commit message sent to Cypress Cloud
+          COMMIT_INFO_MESSAGE: ${{github.event.pull_request.title}}
+          # re-enable PR comment bot
+          COMMIT_INFO_SHA: ${{github.event.pull_request.head.sha}}
           # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
           # in GitHub repo → Settings → Secrets → Actions
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
