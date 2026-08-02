@@ -2,25 +2,26 @@
 # Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
 # Tool:    holocron setup
 # Changes: run `holocron setup` to regenerate.
-name: Lint
+name: Deploy Docs
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: [main, alpha]
-  pull_request:
+    branches: [main]
+    paths:
+      - docs/**
+  workflow_dispatch:
 
 concurrency:
-  group: lint-${{ github.ref }}
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 permissions:
-  contents: write
-  statuses: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  lint:
-    name: Lint
-    uses: theholocron/.github/.github/workflows/lint.yml@main
+  deploy-docs:
+    name: Deploy Docs
+    uses: theholocron/.github/.github/workflows/deploy-docs.yml@main
     secrets: inherit
-    with:
-      enable-auto-commit: true
