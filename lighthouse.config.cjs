@@ -3,5 +3,5 @@ const { defineConfig } = require("@theholocron/lighthouse-config");
 
 module.exports = defineConfig({
 	url: "http://localhost:3000/",
-	startServerCommand: "npx serve@latest out",
+	startServerCommand: "pnpm preview",
 });
