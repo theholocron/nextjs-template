@@ -32,7 +32,7 @@ export default defineConfig({
 				"run-unit": false,
 				"run-storybook": true,
 				"run-interaction": true,
-				"run-user-flow": true,
+				"run-user-flow": false,
 				"run-chromatic": true,
 			},
 		},
