@@ -8,8 +8,8 @@ export default {
 			codecovNextJSWebpackPlugin({
 				enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
 				bundleName: "nextjs-template",
-				uploadToken: process.env.CODECOV_TOKEN,
-			}),
+				uploadToken: process.env.CODECOV_TOKEN ?? "",
+			})
 		);
 		return config;
 	},
