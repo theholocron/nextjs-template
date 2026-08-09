@@ -8,8 +8,9 @@ import { worker } from "./app/msw/browser";
 
 const annotations = setProjectAnnotations([previewAnnotations]);
 
-// browser-side MSW (default)
-setupMSWBrowser(worker, annotations);
+// MSW SetupWorker satisfies the Worker interface at runtime; the cast resolves
+// a return-type variance between SetupWorker.start and the config's Worker.start.
+setupMSWBrowser(worker as unknown as Parameters<typeof setupMSWBrowser>[0], annotations);
 
 // server-side MSW (uncomment and swap imports above to use)
 // setupMSWNode(server, annotations);

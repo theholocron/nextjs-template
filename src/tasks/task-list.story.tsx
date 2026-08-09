@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+
 import TaskStories from "./task.story";
-import { mockTasks } from "./task-list.mock";
 import { TaskList } from "./task-list";
+import { mockTasks } from "./task-list.mock";
 
 const meta = {
 	component: TaskList,

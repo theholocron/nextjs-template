@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { expect, findByRole, within } from "storybook/test";
-import { taskListHandler, taskListErrorHandler } from "../tasks/handlers";
+
+import { taskListErrorHandler, taskListHandler } from "../tasks/handlers";
 import { Inbox } from "./inbox";
 
 const meta = {

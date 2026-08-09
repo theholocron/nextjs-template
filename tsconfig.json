@@ -3,6 +3,7 @@
   "extends": "@theholocron/tsconfig/nextjs",
   "compilerOptions": {
     "baseUrl": "./",
+    "types": ["cypress", "@testing-library/jest-dom"],
     "paths": {
       "@/*": ["./*"]
     },

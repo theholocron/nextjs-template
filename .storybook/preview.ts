@@ -9,7 +9,7 @@ const mswAnnotations = createPreviewAnnotations();
 const preview: Preview = {
 	...mswAnnotations,
 	beforeEach: async (context) => {
-		const cleanup = await mswAnnotations.beforeEach(context);
+		const cleanup = await mswAnnotations.beforeEach?.(context);
 		const handlers = context.parameters?.msw?.handlers;
 		if (handlers && context.msw) {
 			const list = Array.isArray(handlers) ? handlers : [handlers];
@@ -17,7 +17,6 @@ const preview: Preview = {
 		}
 		return cleanup;
 	},
-	layout: "centered",
 	parameters: {
 		controls: {
 			matchers: {
@@ -31,6 +30,7 @@ const preview: Preview = {
 				useTabs: true,
 			},
 		},
+		layout: "centered",
 		nextjs: { appDirectory: true },
 		test: {
 			dangerouslyIgnoreUnhandledErrors: true,
