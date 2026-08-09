@@ -8,15 +8,6 @@ const mswAnnotations = createPreviewAnnotations();
 
 const preview: Preview = {
 	...mswAnnotations,
-	beforeEach: async (context) => {
-		const cleanup = await mswAnnotations.beforeEach?.(context);
-		const handlers = context.parameters?.msw?.handlers;
-		if (handlers && context.msw) {
-			const list = Array.isArray(handlers) ? handlers : [handlers];
-			context.msw.use(...list);
-		}
-		return cleanup;
-	},
 	parameters: {
 		controls: {
 			matchers: {

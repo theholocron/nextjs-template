@@ -8,9 +8,12 @@ import { worker } from "./app/msw/browser";
 
 const annotations = setProjectAnnotations([previewAnnotations]);
 
-// MSW SetupWorker satisfies the Worker interface at runtime; the cast resolves
-// a return-type variance between SetupWorker.start and the config's Worker.start.
-setupMSWBrowser(worker as unknown as Parameters<typeof setupMSWBrowser>[0], annotations);
+// Both casts resolve mismatches between Storybook's wider types and the
+// narrower Worker/Annotations interfaces the shared config defines.
+setupMSWBrowser(
+	worker as unknown as Parameters<typeof setupMSWBrowser>[0],
+	annotations as unknown as Parameters<typeof setupMSWBrowser>[1]
+);
 
 // server-side MSW (uncomment and swap imports above to use)
 // setupMSWNode(server, annotations);
