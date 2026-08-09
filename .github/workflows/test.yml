@@ -27,6 +27,6 @@ jobs:
       run-storybook: true
       run-interaction: true
       run-user-flow: true
-      wait-on-url: "http://localhost:3000"
+      wait-on-url: http://localhost:3000
       run-chromatic: true
     secrets: inherit
