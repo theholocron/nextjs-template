@@ -23,3 +23,4 @@ read the same rules. Put durable, repo-wide agent guidance here.
 - `pnpm test` — vitest
 - `pnpm typecheck` — `tsc --noEmit`
 - `pnpm lint` — ESLint + Stylelint
+- `pnpm start:storybook` — Storybook dev server

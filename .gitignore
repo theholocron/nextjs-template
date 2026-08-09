@@ -91,5 +91,9 @@ super-linter-output
 out
 build
 .vercel
+.env
+.env.development
+.env.local
 .env*.local
 *storybook.log
+storybook-static

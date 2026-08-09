@@ -2,7 +2,7 @@ import type { KnipConfig } from "knip";
 
 const config: KnipConfig = {
 	entry: ["src/**/*.ts", "src/**/*.tsx", "app/**/*.ts", "app/**/*.tsx", "holocron.config.ts"],
-	project: ["src/**/*.ts", "src/**/*.tsx", "app/**/*.ts", "app/**/*.tsx", "*.config.ts", "*.config.mjs"],
+	project: ["src/**/*.ts", "src/**/*.tsx", "app/**/*.ts", "app/**/*.tsx", "*.config.ts", "*.config.cjs"],
 	ignoreDependencies: [
 		"@theholocron/tsconfig",
 		"@theholocron/commitlint-config",

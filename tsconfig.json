@@ -1,4 +1,5 @@
 {
+  "display": "Next.js Template",
   "extends": "@theholocron/tsconfig/nextjs",
   "compilerOptions": {
     "baseUrl": "./",

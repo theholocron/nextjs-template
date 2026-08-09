@@ -16,9 +16,16 @@ concurrency:
 permissions:
   contents: read
   id-token: write
+  statuses: write
 
 jobs:
   test:
     name: Test
     uses: theholocron/.github/.github/workflows/test.yml@main
+    with:
+      run-unit: false
+      run-storybook: true
+      run-interaction: true
+      run-user-flow: true
+      run-chromatic: true
     secrets: inherit

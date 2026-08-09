@@ -1,10 +1,7 @@
-/**
- * @see https://nextjs.org/docs/app/building-your-application/configuring
- * @type {import('next').NextConfig}
- */
 import bundleAnalyzer from "@next/bundle-analyzer";
+import type { NextConfig } from "next";
 
-const config = {
+const config: NextConfig = {
 	output: "export",
 };
 
