@@ -34,7 +34,6 @@ const preview: Preview = {
 				useTabs: true,
 			},
 		},
-		layout: "centered",
 		nextjs: { appDirectory: true },
 		test: {
 			dangerouslyIgnoreUnhandledErrors: true,
