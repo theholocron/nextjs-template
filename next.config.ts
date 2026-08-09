@@ -1,10 +1,16 @@
-import bundleAnalyzer from "@next/bundle-analyzer";
+import { codecovNextJSWebpackPlugin } from "@codecov/nextjs-webpack-plugin";
 import type { NextConfig } from "next";
 
-const withBundleAnalyzer = bundleAnalyzer({
-	enabled: process.env.ANALYZE === "true",
-});
-
-export default withBundleAnalyzer({
+export default {
 	output: "export",
-} satisfies NextConfig);
+	webpack(config) {
+		config.plugins.push(
+			codecovNextJSWebpackPlugin({
+				enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
+				bundleName: "nextjs-template",
+				uploadToken: process.env.CODECOV_TOKEN,
+			}),
+		);
+		return config;
+	},
+} satisfies NextConfig;
