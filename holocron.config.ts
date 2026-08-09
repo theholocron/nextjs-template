@@ -1,9 +1,10 @@
+import type { HolocronConfig } from "@theholocron/cli";
 import { defineConfig } from "@theholocron/cli";
 import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();
 export default defineConfig({
-	description: "Next.js starter template for @theholocron repos.",
+	description: "A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
 	homepage: "https://docs.theholocron.dev/nextjs-template/",
 	repo: {
 		name: "theholocron/nextjs-template",
@@ -13,17 +14,31 @@ export default defineConfig({
 		protection: "balanced",
 		properties: {
 			...repo.properties,
+			runtime_environment: "browser",
 			open_source: true,
 			uses_external_packages: false,
 		},
 	},
 	workflows: [
 		...workflows,
+		{
+			name: "audit",
+			with: { "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
+		},
+		{
+			name: "test",
+			with: {
+				"run-unit": true,
+				"run-storybook": true,
+				"run-interaction": true,
+				"run-user-flow": true,
+				"run-chromatic": true,
+			},
+		},
 		{ name: "release", with: { "run-build": true } },
 		{
-			name: "deploy-docs",
-			with: { name: "nextjs-template" },
-			paths: ["docs/**"],
+			name: "deploy-storybook",
+			paths: ["src/**", ".storybook/**"],
 		},
 	],
 	providers: {
@@ -33,4 +48,4 @@ export default defineConfig({
 	},
 	agent: "claude",
 	skills: ["git-safety", "pr-workflow", "commit-standards", "security-review"],
-});
+} satisfies HolocronConfig);
