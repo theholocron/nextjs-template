@@ -4,7 +4,8 @@ import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();
 export default defineConfig({
-	description: "A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
+	description:
+		"A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
 	homepage: "https://docs.theholocron.dev/nextjs-template/",
 	repo: {
 		name: "theholocron/nextjs-template",

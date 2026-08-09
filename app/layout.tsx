@@ -1,8 +1,9 @@
+import "./app.css";
+
 import type { Metadata } from "next";
 import * as React from "react";
-import MSW from "./msw";
 
-import "./app.css";
+import MSW from "./msw";
 
 /*
 if (process.env.NEXT_RUNTIME === "nodejs") {
