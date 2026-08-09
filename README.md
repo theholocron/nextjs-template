@@ -6,6 +6,8 @@ A modern Next.js template with pre-configured tools, best practices, and CI/CD s
 
 <!-- /holocron:description -->
 
+<!-- holocron:template-only -->
+
 ## Getting Started
 
 Use the [Holocron CLI](https://github.com/theholocron/holocron) to scaffold a new Next.js project. It clones the template, renames all placeholder references, wires up your vault provider, and runs `holocron setup` in one step:
@@ -25,9 +27,11 @@ This will:
 3. Run `pnpm install` (including Playwright browser download)
 4. Run `holocron setup` to configure branch protection, labels, workflows, and repo settings
 
+<!-- /holocron:template-only -->
+
 ## Development
 
-This repo uses [pnpm](https://pnpm.io).
+This repo uses [pnpm workspaces](https://pnpm.io/workspaces).
 
 ```bash
 pnpm dev              # start Next.js dev server
