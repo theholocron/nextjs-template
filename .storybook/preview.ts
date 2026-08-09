@@ -8,6 +8,19 @@ const mswAnnotations = createPreviewAnnotations();
 
 const preview: Preview = {
 	...mswAnnotations,
+	beforeEach: async (context) => {
+		// beforeEach is typed as BeforeEach | BeforeEach[]; narrow to callable form.
+		const fn = typeof mswAnnotations.beforeEach === "function" ? mswAnnotations.beforeEach : undefined;
+		const cleanup = await fn?.(context);
+
+		const handlers = context.parameters?.msw?.handlers;
+		if (handlers && context.msw) {
+			const list = Array.isArray(handlers) ? handlers : [handlers];
+			context.msw.use(...list);
+		}
+
+		return cleanup;
+	},
 	parameters: {
 		controls: {
 			matchers: {
