@@ -17,6 +17,12 @@ updates:
         update-types:
           - minor
           - patch
+    ignore:
+      # @commitlint/config-conventional requires() this package via CJS;
+      # v10+ is ESM-only and crashes commitlint. Keep pinned at 9.x until
+      # @commitlint/config-conventional adds ESM support.
+      - dependency-name: conventional-changelog-conventionalcommits
+        versions: [">=10"]
 
   - package-ecosystem: github-actions
     directory: /
