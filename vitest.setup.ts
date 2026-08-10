@@ -1,22 +1,19 @@
-import "@testing-library/jest-dom";
 import { setProjectAnnotations } from "@storybook/nextjs-vite";
-import { afterAll, afterEach, beforeAll } from "vitest";
-import { worker } from "./app/msw/browser";
+import { setupMSWBrowser } from "@theholocron/vitest-config/setup/msw";
+
+// import { setupMSWNode } from "@theholocron/vitest-config/setup/msw";
 import * as previewAnnotations from "./.storybook/preview";
+import { worker } from "./app/msw/browser";
+// import { server } from "./app/msw/node";
 
 const annotations = setProjectAnnotations([previewAnnotations]);
 
-beforeAll(async () => {
-	await annotations?.beforeAll?.();
-	await worker.start({
-		onUnhandledRequest: "warn",
-	});
-});
+// Both casts resolve mismatches between Storybook's wider types and the
+// narrower Worker/Annotations interfaces the shared config defines.
+setupMSWBrowser(
+	worker as unknown as Parameters<typeof setupMSWBrowser>[0],
+	annotations as unknown as Parameters<typeof setupMSWBrowser>[1]
+);
 
-afterEach(() => {
-	worker.resetHandlers();
-});
-
-afterAll(() => {
-	worker.stop();
-});
+// server-side MSW (uncomment and swap imports above to use)
+// setupMSWNode(server, annotations);

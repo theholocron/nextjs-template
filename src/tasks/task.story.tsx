@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+
 import { Task, type TaskProps } from "./task";
 
 const meta = {

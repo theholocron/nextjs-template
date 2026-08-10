@@ -1,15 +1,26 @@
-import { type Preview } from "@storybook/react";
-import { initialize, mswLoader } from "msw-storybook-addon";
-import { INITIAL_VIEWPORTS } from "storybook/viewport";
-
 import "../app/app.css";
 
-// Initialize MSW
-initialize({ onUnhandledRequest: "bypass" });
+import { type Preview } from "@storybook/nextjs-vite";
+import { createPreviewAnnotations } from "msw-storybook-addon/preview";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
+
+const mswAnnotations = createPreviewAnnotations();
 
 const preview: Preview = {
-	// layout: "centered",
-	loaders: [mswLoader],
+	...mswAnnotations,
+	beforeEach: async (context) => {
+		// beforeEach is typed as BeforeEach | BeforeEach[]; narrow to callable form.
+		const fn = typeof mswAnnotations.beforeEach === "function" ? mswAnnotations.beforeEach : undefined;
+		const cleanup = await fn?.(context);
+
+		const handlers = context.parameters?.msw?.handlers;
+		if (handlers && context.msw) {
+			const list = Array.isArray(handlers) ? handlers : [handlers];
+			context.msw.use(...list);
+		}
+
+		return cleanup;
+	},
 	parameters: {
 		controls: {
 			matchers: {
@@ -25,13 +36,10 @@ const preview: Preview = {
 		},
 		nextjs: { appDirectory: true },
 		test: {
-			// This is needed until Next will update to the React 19 beta: https://github.com/vercel/next.js/pull/65058
-			// In the React 19 beta ErrorBoundary errors (such as redirect) are only logged, and not thrown.
 			dangerouslyIgnoreUnhandledErrors: true,
 		},
 		viewport: {
 			viewports: INITIAL_VIEWPORTS,
-			// defaultViewport: 'ipad',
 		},
 	},
 	tags: ["autodocs"],

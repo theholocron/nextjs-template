@@ -1,7 +1,8 @@
 "use client";
 
-import type { Credentials } from "../auth";
 import "./login.css";
+
+import type { Credentials } from "../auth";
 
 export interface LoginFormProps {
 	onSubmit: (formData: Credentials) => void;

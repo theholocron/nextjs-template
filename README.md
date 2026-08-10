@@ -1,25 +1,65 @@
-# NextJS Template
+# `@theholocron/nextjs-template`
 
-A NextJS template used within the Galaxy.
+<!-- holocron:description -->
 
-## Installation
+A modern Next.js template with pre-configured tools, best practices, and CI/CD setup for rapid application development.
+
+<!-- /holocron:description -->
+
+<!-- holocron:template-only -->
+
+## Getting Started
+
+Use the [Holocron CLI](https://github.com/theholocron/holocron) to scaffold a new Next.js project. It clones the template, renames all placeholder references, wires up your vault provider, and runs `holocron setup` in one step:
 
 ```bash
-npm install --save-dev @theholocron/nextjs-template
+npx @theholocron/cli new nextjs my-app \
+  --description "My app description" \
+  --homepage "https://my-app.example.com" \
+  --vault doppler \
+  --agent claude
 ```
 
-## Usage
+This will:
 
-```typescript
-import { Component, type ComponentProps } from "@theholocron/nextjs-template";
+1. Create `theholocron/my-app` from this template on GitHub
+2. Replace all `nextjs-template` references with `my-app` throughout the repo
+3. Run `pnpm install` (including Playwright browser download)
+4. Run `holocron setup` to configure branch protection, labels, workflows, and repo settings
 
-function App (props: ComponentProps) {
-	return (
-		<Component {...props} />
-	);
-}
+<!-- /holocron:template-only -->
+
+## Development
+
+This repo uses [pnpm workspaces](https://pnpm.io/workspaces).
+
+```bash
+pnpm dev              # start Next.js dev server
+pnpm build            # production build
+pnpm start            # serve production build
+pnpm start:storybook  # start Storybook dev server
+pnpm test             # run Storybook interaction tests
+pnpm test:coverage    # run tests with coverage
+pnpm typecheck        # tsc --noEmit
+pnpm lint             # lint via super-linter (Docker)
 ```
 
-## Documentation
+## What's Included
 
-Check out [The Holocron Archive](https://docs.theholocron.dev/nextjs-template/) for more information.
+| Tool                                                    | Purpose                                       |
+| ------------------------------------------------------- | --------------------------------------------- |
+| [Next.js 16](https://nextjs.org)                        | React framework with App Router               |
+| [React 19](https://react.dev)                           | UI framework                                  |
+| [TypeScript](https://www.typescriptlang.org)            | Type safety                                   |
+| [Storybook](https://storybook.js.org)                   | Component development and interaction testing |
+| [Vitest](https://vitest.dev)                            | Test runner with browser mode                 |
+| [Playwright](https://playwright.dev)                    | Browser automation for play tests             |
+| [MSW](https://mswjs.io)                                 | API mocking                                   |
+| [ESLint](https://eslint.org)                            | Linting                                       |
+| [Stylelint](https://stylelint.io)                       | CSS linting                                   |
+| [Prettier](https://prettier.io)                         | Formatting                                    |
+| [semantic-release](https://semantic-release.gitbook.io) | Automated releases                            |
+
+## Releases
+
+Releases are automated via [semantic-release](https://semantic-release.gitbook.io) on push to `main`. See [CHANGELOG.md](CHANGELOG.md) for the release history.
