@@ -14,6 +14,7 @@ const config: Linter.Config[] = [
 			"n/no-missing-import": "off",
 		},
 	},
+	{ ignores: ["docs/**"] },
 ];
 
 export default config;
