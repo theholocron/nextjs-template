@@ -12,6 +12,7 @@
   "author": "Newton Koumantzelis",
   "type": "module",
   "scripts": {
+    "audit": "knip",
     "build": "next build --webpack",
     "build:storybook": "storybook build",
     "dev": "next dev --webpack",
