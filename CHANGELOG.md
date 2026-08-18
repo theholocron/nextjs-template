@@ -2,7 +2,7 @@
 
 ### Bug Fixes
 
-* **devmoji:** remove --lint from prepare-commit-msg hook ([#245](https://github.com/theholocron/nextjs-template/issues/245)) ([7b5ac2f](https://github.com/theholocron/nextjs-template/commit/7b5ac2f411d851684aa4cdec5f9bffa26dd58f8a))
+- **devmoji:** remove --lint from prepare-commit-msg hook ([#245](https://github.com/theholocron/nextjs-template/issues/245)) ([7b5ac2f](https://github.com/theholocron/nextjs-template/commit/7b5ac2f411d851684aa4cdec5f9bffa26dd58f8a))
 
 ## [1.7.0](https://github.com/theholocron/nextjs-template/compare/v1.6.0...v1.7.0) (2026-08-18)
 
