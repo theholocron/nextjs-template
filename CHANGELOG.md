@@ -2,7 +2,7 @@
 
 ### Features
 
-* **devmoji:** add devmoji hook and config ([#244](https://github.com/theholocron/nextjs-template/issues/244)) ([fcd3d70](https://github.com/theholocron/nextjs-template/commit/fcd3d70d751f844bf9e76fb270b147a35f3c6b23))
+- **devmoji:** add devmoji hook and config ([#244](https://github.com/theholocron/nextjs-template/issues/244)) ([fcd3d70](https://github.com/theholocron/nextjs-template/commit/fcd3d70d751f844bf9e76fb270b147a35f3c6b23))
 
 ## [1.6.0](https://github.com/theholocron/nextjs-template/compare/v1.5.0...v1.6.0) (2026-08-15)
 
