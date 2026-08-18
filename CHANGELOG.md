@@ -2,13 +2,13 @@
 
 ### Features
 
-* **docs:** add docs site, update deploy.yml, bump configs/cli ([#243](https://github.com/theholocron/nextjs-template/issues/243)) ([a277457](https://github.com/theholocron/nextjs-template/commit/a277457b5416024ca41a7057305e95bde96ca343))
+- **docs:** add docs site, update deploy.yml, bump configs/cli ([#243](https://github.com/theholocron/nextjs-template/issues/243)) ([a277457](https://github.com/theholocron/nextjs-template/commit/a277457b5416024ca41a7057305e95bde96ca343))
 
 ### Chores
 
-* **deploy:** update deploy-storybook to use unified deploy.yml ([#241](https://github.com/theholocron/nextjs-template/issues/241)) ([ff99e52](https://github.com/theholocron/nextjs-template/commit/ff99e5221c43309891db4971c280312723761990))
-* sync from theholocron/holocron ([#240](https://github.com/theholocron/nextjs-template/issues/240)) ([73606d0](https://github.com/theholocron/nextjs-template/commit/73606d09793b7eac7795f8f4dc59c88fa7af51ec))
-* sync from theholocron/holocron ([#242](https://github.com/theholocron/nextjs-template/issues/242)) ([c95d363](https://github.com/theholocron/nextjs-template/commit/c95d363e607b5697d04914aa27de4bd63bc14ca4))
+- **deploy:** update deploy-storybook to use unified deploy.yml ([#241](https://github.com/theholocron/nextjs-template/issues/241)) ([ff99e52](https://github.com/theholocron/nextjs-template/commit/ff99e5221c43309891db4971c280312723761990))
+- sync from theholocron/holocron ([#240](https://github.com/theholocron/nextjs-template/issues/240)) ([73606d0](https://github.com/theholocron/nextjs-template/commit/73606d09793b7eac7795f8f4dc59c88fa7af51ec))
+- sync from theholocron/holocron ([#242](https://github.com/theholocron/nextjs-template/issues/242)) ([c95d363](https://github.com/theholocron/nextjs-template/commit/c95d363e607b5697d04914aa27de4bd63bc14ca4))
 
 ## [1.5.0](https://github.com/theholocron/nextjs-template/compare/v1.4.0...v1.5.0) (2026-08-10)
 
