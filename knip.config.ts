@@ -17,7 +17,8 @@ const config: KnipConfig = {
 			],
 			project: ["src/**/*.{ts,tsx}", "app/**/*.{ts,tsx}", "*.config.ts", "*.config.cjs"],
 			// standalone tool configs — not imported by project code
-			ignoreFiles: ["devmoji.config.cjs", "lighthouse.config.cjs"],
+			// .mdx files are compiled extensions — imports not followed by Knip
+			ignoreFiles: ["devmoji.config.cjs", "lighthouse.config.cjs", "**/*.mdx"],
 			// astro.config.ts is the docs build config, not an Astro workspace — disable plugin
 			astro: false,
 		},
@@ -26,7 +27,8 @@ const config: KnipConfig = {
 		},
 	},
 	ignoreDependencies: [
-		// commitlint "extends" uses string shorthand
+		// commitlint "extends" uses string shorthand — both the scoped org shorthand and the full package
+		"@theholocron",
 		"@theholocron/commitlint-config",
 		// used only as a pnpm override reference, not a direct import
 		"@commitlint/config-conventional",
@@ -38,7 +40,6 @@ const config: KnipConfig = {
 		// skills referenced as strings in holocron.config.ts
 		"@theholocron/skills",
 		// config packages loaded via config file resolution — not static imports
-		"@theholocron/devmoji-config",
 		"@theholocron/lighthouse-config",
 		"@theholocron/storybook-config",
 		// storybook packages referenced as strings or loaded at runtime
