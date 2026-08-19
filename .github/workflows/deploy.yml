@@ -1,14 +1,13 @@
 # AUTO-GENERATED — do not edit directly.
 # Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
-# Tool:    holocron sync-github
-# Changes: edit source in theholocron/holocron and push to alpha or main.
+# Tool:    holocron setup
+# Changes: run `holocron setup` to regenerate.
 name: Deploy
 
 on: # yamllint disable-line rule:truthy
   push:
     branches: [main]
     paths:
-      - docs/**
       - src/**
       - .storybook/**
   workflow_dispatch:
@@ -27,8 +26,6 @@ jobs:
     name: Deploy
     uses: theholocron/.github/.github/workflows/deploy.yml@main
     with:
-      type: docs
-      name: nextjs-template
-      storybook-projects: >-
-        [{"name":"app","workingDir":".","outputDir":"storybook-static"}]
+      type: storybook
+      storybook-projects: '[{"name":"app","workingDir":"."}]'
     secrets: inherit
