@@ -2,8 +2,8 @@
 
 ### Chores
 
-* 🔧 enforce strict branch protection ([#246](https://github.com/theholocron/nextjs-template/issues/246)) ([b635656](https://github.com/theholocron/nextjs-template/commit/b63565619644588d82d44aa953964a27316fa0ff))
-* **deps:** bump the all-dependencies group across 1 directory with 19 updates ([#247](https://github.com/theholocron/nextjs-template/issues/247)) ([2b68473](https://github.com/theholocron/nextjs-template/commit/2b6847307409cea0235657d2ee66079eb5f1a89e))
+- 🔧 enforce strict branch protection ([#246](https://github.com/theholocron/nextjs-template/issues/246)) ([b635656](https://github.com/theholocron/nextjs-template/commit/b63565619644588d82d44aa953964a27316fa0ff))
+- **deps:** bump the all-dependencies group across 1 directory with 19 updates ([#247](https://github.com/theholocron/nextjs-template/issues/247)) ([2b68473](https://github.com/theholocron/nextjs-template/commit/2b6847307409cea0235657d2ee66079eb5f1a89e))
 
 ## [1.7.1](https://github.com/theholocron/nextjs-template/compare/v1.7.0...v1.7.1) (2026-08-18)
 
