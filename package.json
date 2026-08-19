@@ -12,6 +12,7 @@
   "author": "Newton Koumantzelis",
   "type": "module",
   "scripts": {
+    "audit": "knip",
     "build": "next build --webpack",
     "build:storybook": "storybook build",
     "dev": "next dev --webpack",
@@ -25,7 +26,7 @@
     "test": "vitest",
     "test:coverage": "vitest run --project storybook --coverage",
     "test:cypress": "cypress open",
-    "test:storybook": "vitest run --project storybook",
+    "test:storybook": "vitest run --project storybook --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

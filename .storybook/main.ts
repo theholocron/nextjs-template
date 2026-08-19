@@ -20,7 +20,7 @@ const config: StorybookConfig = {
 	},
 	framework: "@storybook/nextjs-vite",
 	staticDirs: ["../public"],
-	stories: ["../src/**/*.mdx", "../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
+	stories: ["../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
 };
 
 export default config;
