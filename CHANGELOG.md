@@ -2,14 +2,14 @@
 
 ### Bug Fixes
 
-* **ci:** 🐛 👷 add issues:write to bookkeeping/lint, run-unit to test ([#251](https://github.com/theholocron/nextjs-template/issues/251)) ([dfe22bd](https://github.com/theholocron/nextjs-template/commit/dfe22bda9b896aeebc9f541f9ec21a61407283b3))
-* **deploy:** 🐛 add astro config files to path triggers ([#252](https://github.com/theholocron/nextjs-template/issues/252)) ([959ca68](https://github.com/theholocron/nextjs-template/commit/959ca682ba4b55ed28da1a1f5fe69fe626130e1a))
-* **deploy:** add docs deployment and expand path triggers ([#249](https://github.com/theholocron/nextjs-template/issues/249)) ([fa3f901](https://github.com/theholocron/nextjs-template/commit/fa3f9018b4f0fdb085640778aecd7e194a56916d))
+- **ci:** 🐛 👷 add issues:write to bookkeeping/lint, run-unit to test ([#251](https://github.com/theholocron/nextjs-template/issues/251)) ([dfe22bd](https://github.com/theholocron/nextjs-template/commit/dfe22bda9b896aeebc9f541f9ec21a61407283b3))
+- **deploy:** 🐛 add astro config files to path triggers ([#252](https://github.com/theholocron/nextjs-template/issues/252)) ([959ca68](https://github.com/theholocron/nextjs-template/commit/959ca682ba4b55ed28da1a1f5fe69fe626130e1a))
+- **deploy:** add docs deployment and expand path triggers ([#249](https://github.com/theholocron/nextjs-template/issues/249)) ([fa3f901](https://github.com/theholocron/nextjs-template/commit/fa3f9018b4f0fdb085640778aecd7e194a56916d))
 
 ### Chores
 
-* sync from theholocron/holocron ([#250](https://github.com/theholocron/nextjs-template/issues/250)) ([afe5efe](https://github.com/theholocron/nextjs-template/commit/afe5efe25fe628e5f18c44cb4b91a35da7bc13eb))
-* update @theholocron/astro-config to 7.22.2 ([#248](https://github.com/theholocron/nextjs-template/issues/248)) ([e456341](https://github.com/theholocron/nextjs-template/commit/e4563415585c3eb8c0811abe6f1fc75a946c1de0))
+- sync from theholocron/holocron ([#250](https://github.com/theholocron/nextjs-template/issues/250)) ([afe5efe](https://github.com/theholocron/nextjs-template/commit/afe5efe25fe628e5f18c44cb4b91a35da7bc13eb))
+- update @theholocron/astro-config to 7.22.2 ([#248](https://github.com/theholocron/nextjs-template/issues/248)) ([e456341](https://github.com/theholocron/nextjs-template/commit/e4563415585c3eb8c0811abe6f1fc75a946c1de0))
 
 ## [1.7.2](https://github.com/theholocron/nextjs-template/compare/v1.7.1...v1.7.2) (2026-08-19)
 
