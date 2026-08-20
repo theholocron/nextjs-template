@@ -2,11 +2,11 @@
 
 ### Bug Fixes
 
-* **deploy:** restore with: block and drop storybook name for sandbox/ path ([#256](https://github.com/theholocron/nextjs-template/issues/256)) ([704fdeb](https://github.com/theholocron/nextjs-template/commit/704fdeba0ece873a9d5cd8cd5400315b6002c5fa))
+- **deploy:** restore with: block and drop storybook name for sandbox/ path ([#256](https://github.com/theholocron/nextjs-template/issues/256)) ([704fdeb](https://github.com/theholocron/nextjs-template/commit/704fdeba0ece873a9d5cd8cd5400315b6002c5fa))
 
 ### Chores
 
-* sync from theholocron/holocron ([#254](https://github.com/theholocron/nextjs-template/issues/254)) ([f40ff97](https://github.com/theholocron/nextjs-template/commit/f40ff97fc0a736ee80ed0a292f7109307d8adcca))
+- sync from theholocron/holocron ([#254](https://github.com/theholocron/nextjs-template/issues/254)) ([f40ff97](https://github.com/theholocron/nextjs-template/commit/f40ff97fc0a736ee80ed0a292f7109307d8adcca))
 
 ## [1.7.3](https://github.com/theholocron/nextjs-template/compare/v1.7.2...v1.7.3) (2026-08-20)
 
