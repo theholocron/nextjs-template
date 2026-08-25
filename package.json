@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/nextjs-template",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "private": true,
   "description": "A modern Next.js template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
   "keywords": [
