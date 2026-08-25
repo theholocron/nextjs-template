@@ -31,6 +31,8 @@ This will:
 
 ## Development
 
+<!-- holocron:development -->
+
 This repo uses [pnpm workspaces](https://pnpm.io/workspaces).
 
 ```bash
@@ -43,6 +45,8 @@ pnpm test:coverage    # run tests with coverage
 pnpm typecheck        # tsc --noEmit
 pnpm lint             # lint via super-linter (Docker)
 ```
+
+<!-- /holocron:development -->
 
 ## What's Included
 
@@ -62,4 +66,8 @@ pnpm lint             # lint via super-linter (Docker)
 
 ## Releases
 
+<!-- holocron:releases -->
+
 Releases are automated via [semantic-release](https://semantic-release.gitbook.io) on push to `main`. See [CHANGELOG.md](CHANGELOG.md) for the release history.
+
+<!-- /holocron:releases -->
