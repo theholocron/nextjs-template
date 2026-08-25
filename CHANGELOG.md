@@ -2,16 +2,16 @@
 
 ### Documentation
 
-* add getting-started page and update index ([#257](https://github.com/theholocron/nextjs-template/issues/257)) ([3eafaef](https://github.com/theholocron/nextjs-template/commit/3eafaefedecce61578d5b678ea81c93c976655a7))
+- add getting-started page and update index ([#257](https://github.com/theholocron/nextjs-template/issues/257)) ([3eafaef](https://github.com/theholocron/nextjs-template/commit/3eafaefedecce61578d5b678ea81c93c976655a7))
 
 ### Chores
 
-* 🔧 bump eslint-config to 7.23.1 and drop redundant rule overrides ([#260](https://github.com/theholocron/nextjs-template/issues/260)) ([51c8500](https://github.com/theholocron/nextjs-template/commit/51c85000a32f340c2749068c82a07d3209e90c01))
-* add development and releases marker blocks to README ([#263](https://github.com/theholocron/nextjs-template/issues/263)) ([4d4bfd9](https://github.com/theholocron/nextjs-template/commit/4d4bfd9db26d006ad98831367a95bf70f431c771))
-* add sync workflow to holocron.config ([#262](https://github.com/theholocron/nextjs-template/issues/262)) ([73290f1](https://github.com/theholocron/nextjs-template/commit/73290f1dd69c028083d9096ba70afe5686d7c15c))
-* **deps:** bump the all-dependencies group with 33 updates ([#264](https://github.com/theholocron/nextjs-template/issues/264)) ([60597bc](https://github.com/theholocron/nextjs-template/commit/60597bc83eaef520ed4cc8a27e91da72655bf3ff))
-* sync from theholocron/holocron ([#261](https://github.com/theholocron/nextjs-template/issues/261)) ([524e27b](https://github.com/theholocron/nextjs-template/commit/524e27b70089deddc42d52f23b0e073dc39baeca))
-* sync from theholocron/holocron ([#267](https://github.com/theholocron/nextjs-template/issues/267)) ([3f1daee](https://github.com/theholocron/nextjs-template/commit/3f1daeefed2a07fec8f311db878f0961b829aff7))
+- 🔧 bump eslint-config to 7.23.1 and drop redundant rule overrides ([#260](https://github.com/theholocron/nextjs-template/issues/260)) ([51c8500](https://github.com/theholocron/nextjs-template/commit/51c85000a32f340c2749068c82a07d3209e90c01))
+- add development and releases marker blocks to README ([#263](https://github.com/theholocron/nextjs-template/issues/263)) ([4d4bfd9](https://github.com/theholocron/nextjs-template/commit/4d4bfd9db26d006ad98831367a95bf70f431c771))
+- add sync workflow to holocron.config ([#262](https://github.com/theholocron/nextjs-template/issues/262)) ([73290f1](https://github.com/theholocron/nextjs-template/commit/73290f1dd69c028083d9096ba70afe5686d7c15c))
+- **deps:** bump the all-dependencies group with 33 updates ([#264](https://github.com/theholocron/nextjs-template/issues/264)) ([60597bc](https://github.com/theholocron/nextjs-template/commit/60597bc83eaef520ed4cc8a27e91da72655bf3ff))
+- sync from theholocron/holocron ([#261](https://github.com/theholocron/nextjs-template/issues/261)) ([524e27b](https://github.com/theholocron/nextjs-template/commit/524e27b70089deddc42d52f23b0e073dc39baeca))
+- sync from theholocron/holocron ([#267](https://github.com/theholocron/nextjs-template/issues/267)) ([3f1daee](https://github.com/theholocron/nextjs-template/commit/3f1daeefed2a07fec8f311db878f0961b829aff7))
 
 ## [1.7.4](https://github.com/theholocron/nextjs-template/compare/v1.7.3...v1.7.4) (2026-08-20)
 
