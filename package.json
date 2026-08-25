@@ -87,7 +87,7 @@
     "alex": "^11.0.1",
     "astro": "^7.2.4",
     "axe-playwright": "^2.2.2",
-    "conventional-changelog-conventionalcommits": "^10.2.1",
+    "conventional-changelog-conventionalcommits": "^10.4.0",
     "cypress": "^15.21.0",
     "eslint": "^10.9.0",
     "eslint-plugin-cypress": "^7.0.0",
@@ -126,7 +126,7 @@
       "msw"
     ],
     "overrides": {
-      "conventional-changelog-conventionalcommits": "9.3.1"
+      "conventional-changelog-conventionalcommits": "10.4.0"
     }
   },
   "msw": {
