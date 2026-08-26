@@ -1,3 +1,16 @@
+## [1.7.6](https://github.com/theholocron/nextjs-template/compare/v1.7.5...v1.7.6) (2026-08-26)
+
+### Bug Fixes
+
+* 🐛 restore flat conventional-changelog pin for semantic-release ([#270](https://github.com/theholocron/nextjs-template/issues/270)) ([6ba1416](https://github.com/theholocron/nextjs-template/commit/6ba1416496df9378d2d66746073c418780f1f630))
+* 🐛 scope conventional-changelog override to commitlint only ([#269](https://github.com/theholocron/nextjs-template/issues/269)) ([d8aecff](https://github.com/theholocron/nextjs-template/commit/d8aecff54daf26dce8c66b5a32746da0456642a3))
+
+### Chores
+
+* **deps-dev:** bump conventional-changelog-conventionalcommits ([#266](https://github.com/theholocron/nextjs-template/issues/266)) ([1c1687e](https://github.com/theholocron/nextjs-template/commit/1c1687e0c276810118a1ed6b7b5fea68ba53d982))
+* **deps-dev:** bump eslint-plugin-cypress from 7.0.0 to 7.0.1 ([#265](https://github.com/theholocron/nextjs-template/issues/265)) ([d135615](https://github.com/theholocron/nextjs-template/commit/d13561528c8a7453f520fab56d18e4d03717803c))
+* sync from theholocron/holocron ([#268](https://github.com/theholocron/nextjs-template/issues/268)) ([dc2c0d8](https://github.com/theholocron/nextjs-template/commit/dc2c0d8af03e8192a9d1294f19092fa49eb35bfd))
+
 ## [1.7.5](https://github.com/theholocron/nextjs-template/compare/v1.7.4...v1.7.5) (2026-08-25)
 
 ### Documentation
