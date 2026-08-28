@@ -1,22 +1,21 @@
 import type { HolocronConfig } from "@theholocron/cli";
 import { defineConfig } from "@theholocron/cli";
-import { node } from "@theholocron/holocron-config";
+import { nextjs } from "@theholocron/holocron-config";
 
-const { repo, workflows, providers } = node();
+const { repo, workflows, providers, org, domain } = nextjs();
 export default defineConfig({
 	description:
 		"A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
 	homepage: "https://docs.theholocron.dev/nextjs-template/",
+	org,
+	domain,
 	repo: {
 		name: "theholocron/nextjs-template",
 		teams: [{ slug: "gatekeepers", permission: "maintain" }],
 		topics: ["nextjs", "react", "template", "typescript"],
 		...repo,
-		protection: "strict",
 		requiredChecks: [
-			"Storybook Publish",
-			"UI Review",
-			"UI Tests",
+			...(repo.requiredChecks ?? []),
 			"Test / Run Storybook interaction tests",
 			"Test / Test Interactions and Accessibility",
 			"Test / Test User Flow (1)",
@@ -24,32 +23,14 @@ export default defineConfig({
 			"Test / Test Visual and Composition (default)",
 			"audit / Audit the bundle size",
 			"audit / Audit the performance",
-			"audit / Knip",
-			"codecov/patch",
-			"codecov/project",
 			"cypress: default-group (merge)",
-			"lhci/url/",
 		],
-		properties: {
-			...repo.properties,
-			runtime_environment: "browser",
-			open_source: true,
-			uses_external_packages: false,
-		},
 	},
 	workflows: [
 		...workflows,
 		{
-			name: "audit",
-			with: { "run-knip": true, "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
-		},
-		{
 			name: "test",
 			with: {
-				"run-unit": false,
-				"run-storybook": true,
-				"run-interaction": true,
-				"run-user-flow": true,
 				"wait-on-url": "http://localhost:3000",
 				"run-chromatic": true,
 			},
@@ -58,11 +39,7 @@ export default defineConfig({
 		"sync",
 		{ name: "deploy", with: { docs: true, storybook: [{ name: "" }] } },
 	],
-	providers: {
-		...providers,
-		deployment: "vercel",
-		secrets: "github",
-	},
+	providers,
 	agent: "claude",
 	skills: ["git-safety", "pr-workflow", "commit-standards", "security-review"],
 } satisfies HolocronConfig);
