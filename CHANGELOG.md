@@ -2,12 +2,12 @@
 
 ### Bug Fixes
 
-* 🐛 pass test overrides to nextjs() instead of duplicate workflow entry ([#275](https://github.com/theholocron/nextjs-template/issues/275)) ([b4a6058](https://github.com/theholocron/nextjs-template/commit/b4a6058d6b084a5c01b0989a2c1529db949d8c87))
+- 🐛 pass test overrides to nextjs() instead of duplicate workflow entry ([#275](https://github.com/theholocron/nextjs-template/issues/275)) ([b4a6058](https://github.com/theholocron/nextjs-template/commit/b4a6058d6b084a5c01b0989a2c1529db949d8c87))
 
 ### Chores
 
-* ⬆️ adopt nextjs() preset ([#272](https://github.com/theholocron/nextjs-template/issues/272)) ([7846149](https://github.com/theholocron/nextjs-template/commit/784614972253a947a901534dc256b424ca9cb107))
-* sync from theholocron/holocron ([#271](https://github.com/theholocron/nextjs-template/issues/271)) ([60e8e89](https://github.com/theholocron/nextjs-template/commit/60e8e89334b760bfa3472feee9099b59eca230cc))
+- ⬆️ adopt nextjs() preset ([#272](https://github.com/theholocron/nextjs-template/issues/272)) ([7846149](https://github.com/theholocron/nextjs-template/commit/784614972253a947a901534dc256b424ca9cb107))
+- sync from theholocron/holocron ([#271](https://github.com/theholocron/nextjs-template/issues/271)) ([60e8e89](https://github.com/theholocron/nextjs-template/commit/60e8e89334b760bfa3472feee9099b59eca230cc))
 
 ## [1.7.6](https://github.com/theholocron/nextjs-template/compare/v1.7.5...v1.7.6) (2026-08-26)
 
