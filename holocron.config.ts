@@ -2,7 +2,9 @@ import type { HolocronConfig } from "@theholocron/cli";
 import { defineConfig } from "@theholocron/cli";
 import { nextjs } from "@theholocron/holocron-config";
 
-const { repo, workflows, providers, org, domain } = nextjs();
+const { repo, workflows, providers, org, domain } = nextjs({
+	test: { "wait-on-url": "http://localhost:3000", "run-chromatic": true },
+});
 export default defineConfig({
 	description:
 		"A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
@@ -28,13 +30,6 @@ export default defineConfig({
 	},
 	workflows: [
 		...workflows,
-		{
-			name: "test",
-			with: {
-				"wait-on-url": "http://localhost:3000",
-				"run-chromatic": true,
-			},
-		},
 		{ name: "release", with: { "run-build": true } },
 		"sync",
 		{ name: "deploy", with: { docs: true, storybook: [{ name: "" }] } },
