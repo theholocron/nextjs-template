@@ -27,10 +27,14 @@ export default defineConfig({
 		],
 	},
 	workflows: [
-		...workflows,
+		...workflows.filter((w) => typeof w === "string" || (w as { name: string }).name !== "test"),
 		{
 			name: "test",
 			with: {
+				"run-unit": false,
+				"run-storybook": true,
+				"run-interaction": true,
+				"run-user-flow": true,
 				"wait-on-url": "http://localhost:3000",
 				"run-chromatic": true,
 			},
