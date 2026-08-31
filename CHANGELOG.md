@@ -1,3 +1,13 @@
+## [1.7.8](https://github.com/theholocron/nextjs-template/compare/v1.7.7...v1.7.8) (2026-08-31)
+
+### Bug Fixes
+
+* **deploy:** 🐛 remove stale name: input from deploy workflow ([#279](https://github.com/theholocron/nextjs-template/issues/279)) ([d044549](https://github.com/theholocron/nextjs-template/commit/d044549f590d06f1b89fac722a32da27ee35e294))
+
+### Chores
+
+* sync README and repo metadata ([#278](https://github.com/theholocron/nextjs-template/issues/278)) ([faaf2c3](https://github.com/theholocron/nextjs-template/commit/faaf2c305f3fcd6773014a38b8f07df562156e44))
+
 ## [1.7.7](https://github.com/theholocron/nextjs-template/compare/v1.7.6...v1.7.7) (2026-08-30)
 
 ### Bug Fixes
