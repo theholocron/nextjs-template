@@ -6,6 +6,22 @@ A modern Next.js template with pre-configured tools, best practices, and CI/CD s
 
 <!-- /holocron:description -->
 
+<!-- holocron:installation -->
+
+## Installation
+
+```bash
+pnpm install @theholocron/nextjs-template
+```
+
+## Usage
+
+```typescript
+import {} from "@theholocron/nextjs-template";
+```
+
+<!-- /holocron:installation -->
+
 <!-- holocron:template-only -->
 
 ## Getting Started
@@ -33,18 +49,19 @@ This will:
 
 <!-- holocron:development -->
 
-This repo uses [pnpm workspaces](https://pnpm.io/workspaces).
-
-```bash
-pnpm dev              # start Next.js dev server
-pnpm build            # production build
-pnpm start            # serve production build
-pnpm start:storybook  # start Storybook dev server
-pnpm test             # run Storybook interaction tests
-pnpm test:coverage    # run tests with coverage
-pnpm typecheck        # tsc --noEmit
-pnpm lint             # lint via super-linter (Docker)
-```
+| Script                | Command                                                                                                        |
+| --------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `pnpm build`          | `next build --webpack`                                                                                         |
+| `pnpm dev`            | `next dev --webpack`                                                                                           |
+| `pnpm preview`        | `npx serve@latest out`                                                                                         |
+| `pnpm start`          | `next start`                                                                                                   |
+| `pnpm lint`           | `docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest` |
+| `pnpm test`           | `vitest`                                                                                                       |
+| `pnpm test:coverage`  | `vitest run --project storybook --coverage`                                                                    |
+| `pnpm test:storybook` | `vitest run --project storybook --coverage`                                                                    |
+| `pnpm test:cypress`   | `cypress open`                                                                                                 |
+| `pnpm typecheck`      | `tsc --noEmit`                                                                                                 |
+| `pnpm audit`          | `knip`                                                                                                         |
 
 <!-- /holocron:development -->
 
@@ -68,6 +85,7 @@ pnpm lint             # lint via super-linter (Docker)
 
 <!-- holocron:releases -->
 
-Releases are automated via [semantic-release](https://semantic-release.gitbook.io) on push to `main`. See [CHANGELOG.md](CHANGELOG.md) for the release history.
+Automated via [semantic-release](https://semantic-release.gitbook.io/semantic-release/).
+See the [releases page](https://docs.theholocron.dev/nextjs-template/releases) and [CHANGELOG.md](./CHANGELOG.md).
 
 <!-- /holocron:releases -->
