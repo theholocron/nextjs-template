@@ -65,7 +65,7 @@
     "@theholocron/commitlint-config": "^7.26.0",
     "@theholocron/docs-theme": "^1.7.4",
     "@theholocron/eslint-config": "^7.26.0",
-    "@theholocron/holocron-config": "^7.27.0",
+    "@theholocron/holocron-config": "^7.31.0",
     "@theholocron/holocron-plugin-github": "^3.36.0",
     "@theholocron/holocron-plugin-vercel": "^3.36.0",
     "@theholocron/lighthouse-config": "^7.26.0",
