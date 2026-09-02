@@ -1,23 +1,25 @@
 import type { HolocronConfig } from "@theholocron/cli";
 import { defineConfig } from "@theholocron/cli";
-import { nextjs } from "@theholocron/holocron-config";
+import { compose, nextjsBundle as nextjs, node, typecheck, wikiCapability as wiki } from "@theholocron/holocron-config";
 
-const { repo, workflows, providers, org, domain } = nextjs({
-	test: { "wait-on-url": "http://localhost:3000", "run-chromatic": true },
-});
+const preset = compose(
+	node(),
+	typecheck(),
+	...nextjs({ test: { "wait-on-url": "http://localhost:3000", "run-chromatic": true } }),
+	wiki()
+);
 export default defineConfig({
+	...preset,
 	description:
 		"A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
 	homepage: "https://docs.theholocron.dev/nextjs-template/",
-	org,
-	domain,
 	repo: {
 		name: "theholocron/nextjs-template",
 		teams: [{ slug: "gatekeepers", permission: "maintain" }],
 		topics: ["nextjs", "react", "template", "typescript"],
-		...repo,
+		...preset.repo,
 		requiredChecks: [
-			...(repo.requiredChecks ?? []),
+			...(preset.repo.requiredChecks ?? []),
 			"Test / Run Storybook interaction tests",
 			"Test / Test Interactions and Accessibility",
 			"Test / Test User Flow (1)",
@@ -29,12 +31,11 @@ export default defineConfig({
 		],
 	},
 	workflows: [
-		...workflows,
+		...preset.workflows,
 		{ name: "release", with: { "run-build": true } },
 		"sync",
 		{ name: "deploy", with: { docs: true, storybook: [{ name: "" }] } },
 	],
-	providers,
 	agent: "claude",
 	skills: ["git-safety", "pr-workflow", "commit-standards", "security-review"],
 } satisfies HolocronConfig);
