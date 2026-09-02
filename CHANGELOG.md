@@ -1,3 +1,9 @@
+## [1.7.9](https://github.com/theholocron/nextjs-template/compare/v1.7.8...v1.7.9) (2026-09-02)
+
+### Chores
+
+* **deps:** bump the all-dependencies group with 24 updates ([#280](https://github.com/theholocron/nextjs-template/issues/280)) ([0ada5e1](https://github.com/theholocron/nextjs-template/commit/0ada5e1964f8d9426f85bac07ca9e453f97e7f77))
+
 ## [1.7.8](https://github.com/theholocron/nextjs-template/compare/v1.7.7...v1.7.8) (2026-08-31)
 
 ### Bug Fixes
