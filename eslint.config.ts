@@ -1,16 +1,14 @@
-import { reactApp } from "@theholocron/eslint-config/bundles/react-app";
-import { cypress } from "@theholocron/eslint-config/cypress";
+import { nextApp } from "@theholocron/eslint-config/bundles/next-app";
 import type { Linter } from "eslint";
 
 const config: Linter.Config[] = [
-	...reactApp(),
-	...cypress(),
+	...nextApp(),
 	{
 		settings: {
 			react: { version: "19" },
 		},
 	},
-	{ ignores: ["docs/**"] },
+	{ ignores: ["docs/**", "public/mockServiceWorker.js"] },
 ];
 
 export default config;
