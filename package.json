@@ -89,7 +89,7 @@
     "astro": "^7.2.9",
     "axe-playwright": "^2.2.2",
     "conventional-changelog-conventionalcommits": "^10.4.0",
-    "cypress": "^15.21.1",
+    "cypress": "^16.0.0",
     "eslint": "^10.9.1",
     "eslint-plugin-cypress": "^7.0.1",
     "eslint-plugin-react": "^7.37.5",
