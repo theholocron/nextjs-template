@@ -3,6 +3,7 @@
 <!-- holocron:description -->
 
 A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.
+
 <!-- /holocron:description -->
 
 <!-- holocron:installation -->
