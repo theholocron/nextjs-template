@@ -2,23 +2,15 @@
 
 <!-- holocron:description -->
 
-A modern Next.js template with pre-configured tools, best practices, and CI/CD setup for rapid application development.
-
+A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.
 <!-- /holocron:description -->
 
 <!-- holocron:installation -->
 
 ## Installation
 
-```bash
-pnpm install @theholocron/nextjs-template
-```
-
-## Usage
-
-```typescript
-import {} from "@theholocron/nextjs-template";
-```
+This repository is a workspace root — it is not published. See the
+packages under [`packages/`](./packages) for the tools it ships.
 
 <!-- /holocron:installation -->
 

@@ -2,11 +2,12 @@
   "name": "@theholocron/nextjs-template",
   "version": "1.7.9",
   "private": true,
-  "description": "A modern Next.js template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
+  "description": "A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.",
   "keywords": [
     "nextjs",
+    "react",
     "template",
-    "theholocron"
+    "typescript"
   ],
   "homepage": "https://docs.theholocron.dev/nextjs-template/",
   "bugs": "https://github.com/theholocron/nextjs-template/issues",
@@ -19,18 +20,21 @@
     "build": "next build --webpack",
     "build:storybook": "storybook build",
     "dev": "next dev --webpack",
-    "lint": "docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest",
+    "lint": "holocron run lint",
     "prepare": "husky",
     "prepreview": "next build --webpack",
     "preview": "npx serve@latest out",
     "release": "semantic-release",
     "start": "next start",
     "start:storybook": "storybook dev -p 6006",
-    "test": "vitest",
+    "test": "holocron run test",
     "test:coverage": "vitest run --project storybook --coverage",
     "test:cypress": "cypress open",
     "test:storybook": "vitest run --project storybook --coverage",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "holocron run typecheck",
+    "holocron": "holocron",
+    "wiki": "holocron run wiki",
+    "sync": "holocron run sync"
   },
   "dependencies": {
     "next": "^16",
