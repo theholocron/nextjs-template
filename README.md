@@ -3,7 +3,6 @@
 <!-- holocron:description -->
 
 A modern NextJS template with pre-configured tools, best practices, and CI/CD setup for rapid application development.
-
 <!-- /holocron:description -->
 
 <!-- holocron:installation -->
@@ -42,19 +41,19 @@ This will:
 
 <!-- holocron:development -->
 
-| Script                | Command                                                                                                        |
-| --------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `pnpm build`          | `next build --webpack`                                                                                         |
-| `pnpm dev`            | `next dev --webpack`                                                                                           |
-| `pnpm preview`        | `npx serve@latest out`                                                                                         |
-| `pnpm start`          | `next start`                                                                                                   |
-| `pnpm lint`           | `docker run -e LOG_LEVEL=DEBUG -e RUN_LOCAL=true -v .:/tmp/lint --rm ghcr.io/super-linter/super-linter:latest` |
-| `pnpm test`           | `vitest`                                                                                                       |
-| `pnpm test:coverage`  | `vitest run --project storybook --coverage`                                                                    |
-| `pnpm test:storybook` | `vitest run --project storybook --coverage`                                                                    |
-| `pnpm test:cypress`   | `cypress open`                                                                                                 |
-| `pnpm typecheck`      | `tsc --noEmit`                                                                                                 |
-| `pnpm audit`          | `knip`                                                                                                         |
+| Script                | Command                                     |
+| --------------------- | ------------------------------------------- |
+| `pnpm build`          | `next build --webpack`                      |
+| `pnpm dev`            | `next dev --webpack`                        |
+| `pnpm preview`        | `npx serve@latest out`                      |
+| `pnpm start`          | `next start`                                |
+| `pnpm lint`           | `holocron run lint`                         |
+| `pnpm test`           | `holocron run test`                         |
+| `pnpm test:coverage`  | `vitest run --project storybook --coverage` |
+| `pnpm test:storybook` | `vitest run --project storybook --coverage` |
+| `pnpm test:cypress`   | `cypress open`                              |
+| `pnpm typecheck`      | `holocron run typecheck`                    |
+| `pnpm audit`          | `knip`                                      |
 
 <!-- /holocron:development -->
 
