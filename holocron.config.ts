@@ -5,7 +5,19 @@ import { compose, nextjsBundle as nextjs, node, typecheck, wikiCapability as wik
 const preset = compose(
 	node(),
 	typecheck(),
-	...nextjs({ test: { "wait-on-url": "http://localhost:3000", "run-chromatic": true } }),
+	...nextjs({
+		test: {
+			"wait-on-url": "http://localhost:3000",
+			// Explicit now (holocron#394) -- the reusable workflow's own
+			// chromatic-projects default is going away (an unused matrix
+			// entry showed as a stray "skipping" check on repos that never
+			// opt into Chromatic at all). Same single default project this
+			// repo was already implicitly getting, just spelled out so
+			// removing that default doesn't silently stop this repo's own
+			// Chromatic run.
+			"run-chromatic": { projects: [{ tokenName: "default", workingDir: ".", buildScript: "build:storybook" }] },
+		},
+	}),
 	wiki()
 );
 export default defineConfig({

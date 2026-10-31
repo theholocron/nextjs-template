@@ -29,4 +29,5 @@ jobs:
       run-user-flow: true
       wait-on-url: http://localhost:3000
       run-chromatic: true
+      chromatic-projects: '[{"tokenName":"default","workingDir":".","buildScript":"build:storybook"}]'
     secrets: inherit
