@@ -12,7 +12,7 @@
   "homepage": "https://docs.theholocron.dev/nextjs-template/",
   "bugs": "https://github.com/theholocron/nextjs-template/issues",
   "repository": "theholocron/nextjs-template",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "author": "Newton Koumantzelis",
   "type": "module",
   "scripts": {
